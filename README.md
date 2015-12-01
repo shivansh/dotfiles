@@ -1,2 +1,2 @@
 # awesome-i3
-my playtime results with i3
+fun with i3
