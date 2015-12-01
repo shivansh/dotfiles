@@ -124,9 +124,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #hotkeys
 bindsym $mod+Tab exec google-chrome
+bindsym Ctrl+l exec i3lock -c 00ace6 -t -d
 
 #autostart
 exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-fill ~/Downloads/desktop-wallpapaer-8.png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
