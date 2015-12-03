@@ -1,0 +1,1 @@
+/home/zeebu/.i3

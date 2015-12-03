@@ -1,0 +1,3 @@
+#execute this script to view free ram
+
+awk '/MemFree/ {printf "%.2f GiB\n", $2/1048576}' /proc/meminfo
