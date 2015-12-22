@@ -3,8 +3,8 @@
 runtime! debian.vim
 
 " A separate directory for the vim swap files---/tmp
-" set swapfile
-" set dir=~/tmp
+set swapfile
+set dir=~/tmp
 set term=screen-256color
 
 set autoindent
