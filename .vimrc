@@ -7,17 +7,31 @@ runtime! debian.vim
 " set dir=~/tmp
 set term=screen-256color
 
+set autoindent
+set ignorecase
+set copyindent
+
+set smartcase
+set ignorecase
+
 " Adding line numbers by default
-set number
-:set rnu
+set nu
+set rnu
+set sidescroll=1
+set showcmd
+set showmatch
+
+set incsearch
+set hlsearch
+
+set history=1000
+set autoread
 " size of a hard tabstop
 set tabstop=2
 " insert space(governed by the value of tabstop) instead of tab
-:set expandtab   
+set expandtab   
 " size of an indent
 set shiftwidth=2
-" a combination of spaces and tabs are used to simulate tab stops at a width other than the (hard)tabstop
-set softtabstop=4
 " make tab insert indents instead of tabs at the beginning of a line
 set smarttab
 
@@ -64,7 +78,26 @@ let g:syntastic_check_on_wq = 1
 
 " Autocomplete matching braces
 Plug 'Townk/vim-autoclose'
+Plug 'scrooloose/nerdtree'
+Plug 'edsono/vim-matchit'
+Plug 'vim-scripts/auto-pairs-gentle'
+Plug 'vim-scripts/camelcasemotion'
+Plug 'ervandew/supertab'
+Plug 'anyakichi/vim-surround'
+Plug 'elzr/vim-json'
+au! BufRead,BufNewFile *.json set filetype=json
+augroup json_autocmd
+autocmd!
+autocmd FileType json set autoindent
+autocmd FileType json set formatoptions=tcq2l
+autocmd FileType json set textwidth=78 shiftwidth=2
+autocmd FileType json set softtabstop=2 tabstop=2
+autocmd FileType json set noexpandtab
+" autocmd FileType json set foldmethod=syntax
+augroup END
 call plug#end()
+
+filetype plugin indent on
 
 colorscheme molokai 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by

@@ -1,13 +1,20 @@
 cowsay "$(fortune)"
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/zeebu/.oh-my-zsh
+export ZSH=/home/zeebu/.oh-my-zsh
 export TERM="xterm-256color"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="avit"
+# Hotkeys
+# support for jumping words in terminal using ctrl + (left/right)
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
+# Using noclobber to avoid accidental overwriting of files 
+# with the > redirection
+set -o noclobber
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -54,7 +61,7 @@ plugins=(git extract node npm colored-man-pages )
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -68,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-EDITOR=vim
+export EDITOR=vim
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -83,3 +90,6 @@ EDITOR=vim
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias for git push origin master
+alias gpom="git push origin master"
+alias y="youtube-dl"
