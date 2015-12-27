@@ -35,10 +35,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -47,10 +47,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -59,10 +59,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+H split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+V split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -92,34 +92,33 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #workspaces defined
-set $w1 1:main
-set $w2 2:code
-set $w3 3:chat
-set $w4 4:web
-set $w5 5:music
-set $w6 6:vlc
-set $w7 7:desktop
+set $w1 k:main
+set $w2 j:code
+set $w3 h:chat
+set $w4 l:music
+set $w5 u:vlc
+set $w6 i:desktop
 # switch to workspace
-bindsym $mod+1 workspace $w1
-bindsym $mod+2 workspace $w2
-bindsym $mod+3 workspace $w3
-bindsym $mod+4 workspace $w4
-bindsym $mod+5 workspace $w5
-bindsym $mod+6 workspace $w6
-bindsym $mod+7 workspace $w7
-bindsym $mod+8 workspace 8
+bindsym $mod+k workspace $w1
+bindsym $mod+j workspace $w2
+bindsym $mod+h workspace $w3
+bindsym $mod+l workspace $w4
+bindsym $mod+u workspace $w5
+bindsym $mod+i workspace $w6
+bindsym $mod+o workspace 7
+bindsym $mod+p workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $w1 
-bindsym $mod+Shift+2 move container to workspace $w2
-bindsym $mod+Shift+3 move container to workspace $w3
-bindsym $mod+Shift+4 move container to workspace $w4
-bindsym $mod+Shift+5 move container to workspace $w5
-bindsym $mod+Shift+6 move container to workspace $w6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+h move container to workspace $w1 
+bindsym $mod+Shift+j move container to workspace $w2
+bindsym $mod+Shift+k move container to workspace $w3
+bindsym $mod+Shift+l move container to workspace $w4
+bindsym $mod+Shift+u move container to workspace $w5
+bindsym $mod+Shift+i move container to workspace $w6
+bindsym $mod+Shift+o move container to workspace 7
+bindsym $mod+Shift+p move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
