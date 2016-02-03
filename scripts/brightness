@@ -1,0 +1,30 @@
+#!/bin/bash
+
+die(){
+  echo "$@"
+  exit 1
+}
+
+[ "$(id -u)" != "0" ] && {
+  sudo "$0" "$@"
+  exit $?
+}
+
+[ $# -ne 1 ] && die "USAGE: brightness <percentage to change>"
+[ "$1" -gt -100 ] && [ "$1" -le 100 ] || die "Percentage must be an integer between -100 and 100 (inclusive)."
+
+brightness_directory="/dev/null"
+if [ -d /sys/class/backlight/intel_backlight ]; then
+  brightness_directory="/sys/class/backlight/intel_backlight"
+elif [ -d /sys/class/blacklight/acpi_video0 ]; then
+  brightness_directory="/sys/class/backlight/acpi_video0"
+else
+  die "Can't determine backlight controller"
+fi
+
+current_brightness=$(cat $brightness_directory/brightness)
+max_brightness=$(cat $brightness_directory/max_brightness)
+brightness=$((100 / $1))
+brightness=$((max_brightness / brightness))
+brightness=$((current_brightness + brightness))
+echo "$brightness" > "$brightness_directory/brightness"
