@@ -7,6 +7,11 @@ export GPG_TTY=$(tty)
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# Powerline configuration variables
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+# POWERLEVEL9K_MODE='awesome-patched'
+
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -64,7 +69,7 @@ plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebu/my-config-files/scripts"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
