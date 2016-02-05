@@ -93,8 +93,6 @@ Plug 'mhinz/vim-startify'
 Plug 'flazz/vim-colorschemes'
 Plug 'townk/vim-autoclose'
 Plug 'vim-scripts/HTML-AutoCloseTag'
-Plug 'edsono/vim-matchit'
-Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'davidhalter/jedi-vim'
 Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
@@ -109,6 +107,8 @@ Plug 'ervandew/supertab'
 Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 
+" Plug 'edsono/vim-matchit'
+" Plug 'vim-scripts/auto-pairs-gentle'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
@@ -142,14 +142,14 @@ let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " autocmd FileType json set foldmethod=syntax
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
 " Typescript
-let g:syntastic_typescript_checks=['tsc']
+let g:syntastic_typescript_checks=['tsc', 'tslint']
 " Make the compiler search for the tsconfig.json file starting in
 " the current directory and continuing up the parent directory chain.
 let g:syntastic_typescript_tsc_fname = ''
@@ -165,7 +165,11 @@ let g:javascript_plugin_jsdoc = 1
 " C/C++
 " let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 " let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+" let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+
+" Assembly
+" let g:syntastic_asm_compiler = 'mipsel-linux-gcc'
+let g:syntastic_asm_checkers = []
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -254,8 +258,7 @@ map ; :
 map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
 
 " Tagbar
-nmap <F4> :TagbarToggle<CR>
-
+nmap  <F4> :TagbarToggle<CR>
 nmap <C-i> :IndentLinesToggle<CR>
 nmap <C-l> :SyntasticToggleMode<CR>
 
