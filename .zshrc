@@ -1,3 +1,6 @@
+# zsh -c 'export PS1="%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
+# )
+# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
 cowsay "$(fortune)"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/zeebu/.oh-my-zsh
@@ -57,7 +60,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages )
+plugins=(git extract node npm colored-man-pages jump)
 
 # User configuration
 
@@ -76,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 export EDITOR=vim
+export PATH="$HOME/arc/arcanist/bin:$PATH"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -93,3 +97,9 @@ export EDITOR=vim
 # alias for git push origin master
 alias gpom="git push origin master"
 alias y="youtube-dl"
+alias sap="sudo apt-get"
+alias gla="glances"
+alias grf="git reflog"
+alias z="zathura"
+alias ss="sudo service"
+alias N="nautilus --no-desktop"

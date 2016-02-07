@@ -3,42 +3,40 @@
 runtime! debian.vim
 
 " A separate directory for the vim swap files---/tmp
-set swapfile
-set dir=~/tmp
+" set swapfile
+" set dir=~/tmp
 set term=screen-256color
 
-set autoindent
+set autoindent smartindent
 set ignorecase
 set copyindent
-
 set smartcase
 set ignorecase
-
 " Adding line numbers by default
 set nu
 set rnu
 set sidescroll=1
 set showcmd
 set showmatch
-
 set incsearch
 set hlsearch
-
-set history=1000
 set autoread
-" size of a hard tabstop
 set tabstop=2
-" insert space(governed by the value of tabstop) instead of tab
-set expandtab   
-" size of an indent
-set shiftwidth=2
-" make tab insert indents instead of tabs at the beginning of a line
-set smarttab
+set expandtab " insert space(governed by the value of tabstop) instead of tab
+set shiftwidth=2 " size of an indent
+set smarttab " make tab insert indents instead of tabs at the beginning of a line
+"set autowrite		" Automatically save before commands like :next and :make
+"set hidden		" Hide buffers when they are abandoned
+set mouse=n		" Enable mouse usage (all modes)
 
 let g:neocomplcache_enable_at_startup = 1
-
 " Vim plug for plugin management
 call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdcommenter'
+" NERDcommenter mapping
+nmap // <leader>ci
+
 " Indentation
 " Plug 'nathanaelkane/vim-indent-guides'
 " C++ autocompletion support
@@ -57,7 +55,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
- 
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'pangloss/vim-javascript'
 " Color schemes
@@ -70,7 +67,6 @@ Plug 'scrooloose/syntastic'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -95,6 +91,7 @@ autocmd FileType json set softtabstop=2 tabstop=2
 autocmd FileType json set noexpandtab
 " autocmd FileType json set foldmethod=syntax
 augroup END
+Plug 'vim-scripts/HTML-AutoCloseTag'
 call plug#end()
 
 filetype plugin indent on
@@ -133,17 +130,6 @@ endif
 if has("autocmd")
   filetype plugin indent on
 endif
-
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
-"set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-"set smartcase		" Do smart case matching
-"set incsearch		" Incremental search
-"set autowrite		" Automatically save before commands like :next and :make
-"set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")

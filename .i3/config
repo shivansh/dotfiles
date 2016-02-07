@@ -94,10 +94,10 @@ bindsym $mod+minus scratchpad show
 #workspaces defined
 set $w1 k:main
 set $w2 j:code
-set $w3 h:chat
+set $w3 h:desktop
 set $w4 l:music
 set $w5 u:vlc
-set $w6 i:desktop
+set $w6 i:ide
 # switch to workspace
 bindsym $mod+k workspace $w1
 bindsym $mod+j workspace $w2
@@ -111,9 +111,9 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+h move container to workspace $w1 
+bindsym $mod+Shift+k move container to workspace $w1
 bindsym $mod+Shift+j move container to workspace $w2
-bindsym $mod+Shift+k move container to workspace $w3
+bindsym $mod+Shift+h move container to workspace $w3
 bindsym $mod+Shift+l move container to workspace $w4
 bindsym $mod+Shift+u move container to workspace $w5
 bindsym $mod+Shift+i move container to workspace $w6
@@ -133,7 +133,8 @@ bindsym $mod+m move workspace to output left
 
 #hotkeys
 bindsym $mod+Tab exec google-chrome
-bindsym Mod1+l exec i3lock -c 00ace6 -t -d
+bindsym Mod1+Shift+l exec i3lock -c 00ace6 -t -d
+#bindsym Mod1+Shift+l exec xscreensaver-command -lock
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 
@@ -141,6 +142,12 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym $mod+Shift+t exec --no-startup-id xinput disable 'Touchpad'
 bindsym $mod+t exec --no-startup-id xinput enable 'Touchpad'
 
+#set $mode_system System (h) hibernate
+#mode "$mode_system" {
+#  bindsym Shift+h exec --no-startup-id i3exit hibernate, mode "default"
+#}
+#bindsym $mode+End mode "$mode_system"
+#bindsym $mod+Shift+End exec pm-hibernate
 #autostart
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/Downloads/desktop-wallpapaer-8.png
