@@ -28,6 +28,10 @@ set smarttab " make tab insert indents instead of tabs at the beginning of a lin
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 set mouse=n		" Enable mouse usage (all modes)
+set wrap
+set linebreak
+set textwidth=0
+set wrapmargin=0
 
 let g:neocomplcache_enable_at_startup = 1
 " Vim plug for plugin management
