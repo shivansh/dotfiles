@@ -1,10 +1,10 @@
 # awesome-i3
-**Done** Still pending feh integration on the desktop background.
 
+Integrated feh in desktop background
+
+----
+ToDo
+----
 Find a way to improve the tiling in i3lock!!!
 
-i3status installed
-
-xbacklight installed
-
-view man pactl documentation for more details
+man pactl for more details

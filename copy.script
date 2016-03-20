@@ -1,0 +1,1 @@
+cp ~/.vimrc . && cp ~/.zshrc . && cp ~/.bashrc . && cp -a ~/.i3 . 

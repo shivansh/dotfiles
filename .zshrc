@@ -1,6 +1,6 @@
 # zsh -c 'export PS1="%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 # )
-# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
+ #%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
 
 cowsay "$(fortune)"
 # Path to your oh-my-zsh installation.
@@ -10,7 +10,7 @@ export TERM="xterm-256color"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
+ZSH_THEME="cobalt2"
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -61,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages jump)
+plugins=(git extract node npm colored-man-pages jump colorize cp zsh-syntax-highlighting) 
 
 # User configuration
 
@@ -85,7 +85,7 @@ export PATH="$HOME/arc/arcanist/bin:$PATH"
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+#export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -104,3 +104,6 @@ alias grf="git reflog"
 alias z="zathura"
 alias ss="sudo service"
 alias N="nautilus --no-desktop"
+alias j="jump"
+alias vi="vim"
+alias sapi="sap install"
