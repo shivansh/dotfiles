@@ -1,0 +1,76 @@
+# Sinuous Conky
+#
+# Copyright 2015 John Persano
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+# Placement settings
+alignment top_right
+gap_x 10
+gap_y 10
+minimum_size 400 850
+maximum_width 800
+
+# Background settings
+background yes
+
+# Execution settings
+update_interval 2
+update_interval_on_battery 4
+total_run_times 0
+
+# Buffer settings
+double_buffer yes
+no_buffers yes
+text_buffer_size 1248
+
+# Sample settings
+cpu_avg_samples 2
+
+# Font settings
+use_xft yes
+override_utf8_locale yes
+
+# Window settings
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes 
+own_window_argb_value 0
+own_window_hints below, undecorated, sticky, skip_taskbar, skip_pager
+
+# Draw settings
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Load LUA
+lua_load ~/.lua.lua
+lua_draw_hook_pre ring_stats
+
+# Where the magic happens
+TEXT
+${offset 240}${voffset 240}${color #ffffff}${font Roboto Light:size=26}cpu
+${offset 265}${voffset -20}${color #ffffff}${font Roboto Light:size=12}${cpu cpu0}%
+
+${offset 240}${voffset 64}${color #ffffff}${font Roboto Light:size=26}ram
+${offset 265}${voffset -20}${color #ffffff}${font Roboto Light:size=12}${memperc}%
+
+${offset 240}${voffset 64}${color #ffffff}${font Roboto Light:size=26}tmp
+${offset 255}${voffset -20}${color #ffffff}${font Roboto Light:size=12}${hwmon 1 temp 1}°C
+
+${offset 240}${voffset 64}${color #ffffff}${font Roboto Light:size=26}bat
+${offset 260}${voffset -20}${color #ffffff}${font Roboto Light:size=12}${battery_percent BAT0}%
+

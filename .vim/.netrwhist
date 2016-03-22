@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/sys/class/power_supply/BAT0'
+let g:netrw_dirhist_2='/home/zeebu/.i3'
+let g:netrw_dirhist_3='/etc/i3'
+let g:netrw_dirhist_4='/home/zeebu/.i3/awesome-i3'
+let g:netrw_dirhist_5='/home/zeebu/Source Codes'
+let g:netrw_dirhist_6='/home/zeebu/Source Codes/git/Facts'
+let g:netrw_dirhist_7='/home/zeebu/kibana-4.3.0-linux-x64/config'

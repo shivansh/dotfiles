@@ -61,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages jump colorize cp zsh-syntax-highlighting) 
+plugins=(git extract node npm colored-man-pages jump colorize cp zsh-syntax-highlighting)
 
 # User configuration
 
