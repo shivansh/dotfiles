@@ -10,7 +10,7 @@ export TERM="xterm-256color"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="cobalt2"
+ZSH_THEME="agnoster"
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
