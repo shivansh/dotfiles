@@ -86,6 +86,7 @@ Plug 'ervandew/supertab'
 Plug 'anyakichi/vim-surround'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/nerdcommenter'
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
 autocmd!
