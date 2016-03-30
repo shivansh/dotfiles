@@ -87,6 +87,8 @@ Plug 'anyakichi/vim-surround'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
 autocmd!
@@ -95,12 +97,16 @@ autocmd FileType json set formatoptions=tcq2l
 autocmd FileType json set textwidth=78 shiftwidth=2
 autocmd FileType json set softtabstop=2 tabstop=2
 autocmd FileType json set noexpandtab
+" autocmd vimenter * NERDTree
 " autocmd FileType json set foldmethod=syntax
 augroup END
 Plug 'vim-scripts/HTML-AutoCloseTag'
 call plug#end()
 
 filetype plugin indent on
+
+" mappings
+map <C-n> :NERDTreeToggle<CR>
 
 colorscheme molokai 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
