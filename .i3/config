@@ -146,7 +146,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+m move workspace to output left
 
 #hotkeys
-bindsym $mod+Tab exec google-chrome
+bindsym $mod+Tab exec google-chrome-unstable
 bindsym Mod1+Shift+l exec i3lock -c 00ace6 -t -d
 #bindsym Mod1+Shift+l exec xscreensaver-command -lock
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% 

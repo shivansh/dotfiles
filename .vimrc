@@ -34,6 +34,7 @@ set textwidth=0
 set wrapmargin=0
 
 let g:neocomplcache_enable_at_startup = 1
+let g:Powerline_symbols = 'fancy'
 " Vim plug for plugin management
 call plug#begin('~/.vim/plugged')
 
@@ -63,8 +64,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Plug 'pangloss/vim-javascript'
 " Color schemes
 Plug 'flazz/vim-colorschemes'
-" Plug 'tomasr/molokai'
-" let g:molokai_original = 1
+"Plug 'tomasr/molokai'
+"let g:molokai_original = 1
 " let g:rehash256 = 1
 " Syntax checking for vim
 Plug 'scrooloose/syntastic'
@@ -89,6 +90,14 @@ Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
+Plug 'lokaltog/vim-powerline'
+" Improvised statusline-powerline configurations
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"let g:airline_section_b = '%{strftime("%c")}'
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+set laststatus=2
+
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
 autocmd!
@@ -107,8 +116,11 @@ filetype plugin indent on
 
 " mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-Left> b
+map <C-Right> w
 
-colorscheme molokai 
+colorscheme CandyPaper
+"colorscheme molokai
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
