@@ -6,14 +6,12 @@ runtime! debian.vim
 " set swapfile
 " set dir=~/tmp
 set term=screen-256color
-
 set autoindent smartindent
 set ignorecase
 set copyindent
 set smartcase
 set ignorecase
-" Adding line numbers by default
-set nu
+set nu " Adding line numbers by default
 set rnu
 set sidescroll=1
 set showcmd
@@ -27,11 +25,11 @@ set shiftwidth=2 " size of an indent
 set smarttab " make tab insert indents instead of tabs at the beginning of a line
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-set mouse=n		" Enable mouse usage (all modes)
 set wrap
 set linebreak
 set textwidth=0
 set wrapmargin=0
+set mouse=a "Enable mouse usage in all the modes"
 
 let g:neocomplcache_enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
@@ -41,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdcommenter'
 " NERDcommenter mapping
 nmap // <leader>ci
+" by default <leader> is mapped to \
 
 " Indentation
 " Plug 'nathanaelkane/vim-indent-guides'
@@ -64,11 +63,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Plug 'pangloss/vim-javascript'
 " Color schemes
 Plug 'flazz/vim-colorschemes'
-"Plug 'tomasr/molokai'
-"let g:molokai_original = 1
+" Plug 'tomasr/molokai'
+" let g:molokai_original = 1
 " let g:rehash256 = 1
-" Syntax checking for vim
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic' " Syntax checking for vim
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -77,8 +75,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-" Autocomplete matching braces
-Plug 'Townk/vim-autoclose'
+Plug 'Townk/vim-autoclose' " Autocomplete matching braces
 Plug 'scrooloose/nerdtree'
 Plug 'edsono/vim-matchit'
 Plug 'vim-scripts/auto-pairs-gentle'
@@ -89,10 +86,12 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion' " TODO: figure this one out
 Plug 'lokaltog/vim-powerline'
-" Improvised statusline-powerline configurations
-Plug 'vim-airline/vim-airline'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
 Plug 'vim-airline/vim-airline-themes'
 "let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
@@ -104,9 +103,9 @@ autocmd!
 autocmd FileType json set autoindent
 autocmd FileType json set formatoptions=tcq2l
 autocmd FileType json set textwidth=78 shiftwidth=2
-autocmd FileType json set softtabstop=2 tabstop=2
+
 autocmd FileType json set noexpandtab
-" autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree << uncomment to toggle automatically
 " autocmd FileType json set foldmethod=syntax
 augroup END
 Plug 'vim-scripts/HTML-AutoCloseTag'
@@ -115,12 +114,12 @@ call plug#end()
 filetype plugin indent on
 
 " mappings
-map <C-n> :NERDTreeToggle<CR>
-map <C-Left> b
-map <C-Right> w
+map <C-j> :NERDTreeToggle<CR>
+" map <C-Left> b TODO >> fix key-bindings in normal mode
+" map <C-Right> w
 
 colorscheme CandyPaper
-"colorscheme molokai
+" colorscheme molokai
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
@@ -131,10 +130,9 @@ colorscheme CandyPaper
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
 " options, so any other options should be set AFTER setting 'compatible'.
-"set compatible
+" set compatible
 
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
+" Enable syntax highlighting by default.
 if has("syntax")
   syntax on
 endif
@@ -143,14 +141,12 @@ endif
 " turn on this option as well
 " set background=dark
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" Make vim jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
+" Loading indentation rules and plugins according to the filetype
 if has("autocmd")
   filetype plugin indent on
 endif
