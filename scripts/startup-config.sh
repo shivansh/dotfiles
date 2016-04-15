@@ -3,7 +3,7 @@
 # The "|| true" ensures that if xbacklight fails for any reason, X can still start.
 sudo bash -c '{
 echo "#!/bin/bash"
-echo "xbacklight =30 || true"
+echo "xbacklight =15 || true"
 } >> /etc/lightdm/display-setup-script.sh '
 
 # This makes that script executable

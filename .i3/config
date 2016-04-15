@@ -16,7 +16,8 @@ set $mod Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 10
+#font pango:DejaVu Sans Mono 10
+font pango:Source Code Pro for Powerline Semibold 14.1px
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
