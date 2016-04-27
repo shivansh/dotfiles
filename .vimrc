@@ -91,6 +91,7 @@ Plug 'lokaltog/vim-powerline'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'derekwyatt/vim-scala'
 Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
 Plug 'vim-airline/vim-airline-themes'
 "let g:airline_section_b = '%{strftime("%c")}'

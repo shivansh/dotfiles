@@ -7,7 +7,9 @@
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
-#
+
+## >>gsettings set org.gnome.desktop.background show-desktop-icons false << is used to get rid of desktop window on instantiation of nautilus.
+
 set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode

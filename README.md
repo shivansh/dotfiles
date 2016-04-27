@@ -1,7 +1,6 @@
-#rc-configurations 
+##rc-configurations 
 
 Collection of all the configuration files
-
 
 ##ToDo
 
