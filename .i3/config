@@ -99,7 +99,7 @@ set $w1 k:main
 set $w2 j:vim
 set $w3 h:desktop
 set $w4 l:ssh
-set $w5 u:vlc
+set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
 # switch to workspace

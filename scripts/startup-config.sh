@@ -1,5 +1,5 @@
 # This creates a small script running xbacklight.
-# You can change the =30 into another value if you wish. 
+# You can change the = 30 into another value if you wish. 
 # The "|| true" ensures that if xbacklight fails for any reason, X can still start.
 sudo bash -c '{
 echo "#!/bin/bash"

@@ -109,4 +109,5 @@ alias j="jump"
 alias vi="vim"
 alias sapi="sap install"
 alias gpfom="git push -f origin master"
-alias go="gnome-open" # an interesting file-handler
+alias go="gnome-open" # an awesome file-handler
+alias dt="git difftool"
