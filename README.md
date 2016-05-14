@@ -8,8 +8,16 @@
                                      __/ |                                      
                                     |___/                                       
 ```
-==============================
+==========
 Collection of all the configuration files
+
+## Installation
+
+* Clone the repository.
+
+~~* Execute the following commands in order~~
+~~  - `cd scritps && chmod +x env-setup.sh`~~
+~~  - `./env-setup.sh`~~
 
 ##ToDo
 
@@ -20,3 +28,5 @@ Collection of all the configuration files
 * Integrated feh in desktop background **&#x2713;**
 
 * Fix key-bindings `<Ctrl-arrow>` in normal mode 
+
+* Enable `:set paste` by default, without disabling neocomplcache

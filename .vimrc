@@ -77,6 +77,7 @@ let g:syntastic_check_on_wq = 1
 
 Plug 'Townk/vim-autoclose' " Autocomplete matching braces
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edsono/vim-matchit'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/camelcasemotion'
@@ -92,7 +93,10 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
+Plug 'klen/python-mode'
 Plug 'ensime/ensime-vim'
+"Plug 'megaannum/vimside'
+Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
 Plug 'vim-airline/vim-airline-themes'
 "let g:airline_section_b = '%{strftime("%c")}'
@@ -116,6 +120,7 @@ call plug#end()
 filetype plugin indent on
 
 autocmd BufWritePost *.scala :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -147,6 +152,8 @@ map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 " map <C-Left> b TODO >> fix key-bindings in normal mode
 " map <C-Right> w
 
+
+" colorscheme desert256v2
 colorscheme CandyPaper
 " colorscheme 256-jungle
 " colorscheme molokai
