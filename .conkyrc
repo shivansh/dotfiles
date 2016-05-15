@@ -23,7 +23,7 @@ double_buffer no
 background no
 
 ## Update interval in seconds
-update_interval 1.0
+update_interval 2.0
 
 ## This is the number of times Conky will update before quitting.
 ## Set to zero to run forever.
@@ -76,8 +76,9 @@ TEXT
 {"full_text" : "CPU ${cpu cpu1}% ${freq_g 1}GHz ${exec sensors | grep -m 1 "Core 0"|awk '{print $3}'}", "color" : "\#7CFF00"},
 {"full_text" : "RAM ${memperc}%" , "color" :
   ${if_match ${memperc}<90}"\#FFB300"${else}"\#ff0000"${endif} }],
-{"full_text" : "Bat ${battery BAT1}", "color" : "\#C4FCF1"},
+{"full_text" : "${swap}/${swapmax} (${swapperc}%)"},
+{"full_text" : "BAT ${battery BAT1}", "color" : "\#C4FCF1"},
 {"full_text" : "♪: ${exec pactl list sinks | grep "Volume: 0"| tail -n 1 | awk '{print substr($3, 1, index($3, "%") - 1)}'}%", "color" : "\#EAD5FF"},
-{"full_text" : "${time %a %d-%m-%y} ${time %H:%M}", "color" : "\#FCC4C7"},
+{"full_text" : "${time %a %d-%m-%y} ${time %H:%M:%S}", "color" : "\#FCC4C7"},
     
 

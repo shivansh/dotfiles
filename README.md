@@ -11,14 +11,6 @@
 ==========
 Collection of all the configuration files
 
-## Installation
-
-* Clone the repository.
-
-~~* Execute the following commands in order~~
-~~  - `cd scritps && chmod +x env-setup.sh`~~
-~~  - `./env-setup.sh`~~
-
 ##ToDo
 
 * Find a way to improve the tiling in **i3lock**
