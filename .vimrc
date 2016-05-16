@@ -95,6 +95,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
 Plug 'klen/python-mode'
 Plug 'ensime/ensime-vim'
+Plug 'tpope/vim-markdown'
 "Plug 'megaannum/vimside'
 Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
