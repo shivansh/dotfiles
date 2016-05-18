@@ -11,7 +11,7 @@ set ignorecase
 set copyindent
 set smartcase
 set ignorecase
-set nu " Adding line numbers by default
+set nu 
 set rnu
 set sidescroll=1
 set showcmd
@@ -61,7 +61,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'pangloss/vim-javascript'
-" Color schemes
 Plug 'flazz/vim-colorschemes'
 " Plug 'tomasr/molokai'
 " let g:molokai_original = 1
@@ -94,9 +93,12 @@ Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
 Plug 'klen/python-mode'
+Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'ensime/ensime-vim'
+"Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-markdown'
 "Plug 'megaannum/vimside'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
 Plug 'vim-airline/vim-airline-themes'
@@ -115,13 +117,12 @@ autocmd FileType json set noexpandtab
 " autocmd vimenter * NERDTree << uncomment to toggle automatically
 " autocmd FileType json set foldmethod=syntax
 augroup END
-Plug 'vim-scripts/HTML-AutoCloseTag'
 call plug#end()
 
 filetype plugin indent on
 
-autocmd BufWritePost *.scala :EnTypeCheck
-nnoremap <localleader>t :EnTypeCheck<CR>
+"autocmd BufWritePost *.scala :EnTypeCheck
+"nnoremap <localleader>t :EnTypeCheck<CR>
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -153,11 +154,8 @@ map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 " map <C-Left> b TODO >> fix key-bindings in normal mode
 " map <C-Right> w
 
-
-" colorscheme desert256v2
-colorscheme CandyPaper
-" colorscheme 256-jungle
-" colorscheme molokai
+colorscheme jellyx
+" Favourites > desert256v2 Candypaper 256-jungle molokai
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
