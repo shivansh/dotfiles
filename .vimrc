@@ -2,14 +2,7 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-" A separate directory for the vim swap files---/tmp
-" set swapfile
-" set dir=~/tmp
 set term=screen-256color
-set autoindent smartindent
-set ignorecase
-set copyindent
-set smartcase
 set ignorecase
 set nu 
 set rnu
@@ -19,21 +12,39 @@ set showmatch
 set incsearch
 set hlsearch
 set autoread
-set tabstop=2
-set expandtab " insert space(governed by the value of tabstop) instead of tab
 set shiftwidth=2 " size of an indent
-set smarttab " make tab insert indents instead of tabs at the beginning of a line
-"set autowrite		" Automatically save before commands like :next and :make
-"set hidden		" Hide buffers when they are abandoned
+" set autowrite	 " Automatically save before commands like :next and :make
+" set hidden		 " Hide buffers when they are abandoned
 set wrap
 set linebreak
 set textwidth=0
 set wrapmargin=0
-set mouse=a "Enable mouse usage in all the modes"
+set mouse=a
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Tabs, indents and cases
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=2
+set expandtab    " insert space(governed by the value of tabstop) instead of tab
+set smarttab     " make tab insert indents instead of tabs at the beginning of a line
+set copyindent
+set autoindent 
+set smartindent
+set smartcase
+set ignorecase
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Swapfiles and backup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" A separate directory for the vim swap files
+set directory^=~/.vim/temp
+" The ^= syntax for :set prepends the directory name to the head of the list,
+" so Vim will check that directory first.
+
 
 let g:neocomplcache_enable_at_startup = 1
-let g:Powerline_symbols = 'fancy'
-" Vim plug for plugin management
+" let g:Powerline_symbols = 'fancy'
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
@@ -42,7 +53,7 @@ nmap // <leader>ci
 " by default <leader> is mapped to \
 
 " Indentation
-" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 " C++ autocompletion support
 " Plug 'OmniCppComplete'
 " JavaScript syntax checking
@@ -74,7 +85,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-Plug 'Townk/vim-autoclose' " Autocomplete matching braces
+Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'edsono/vim-matchit'
@@ -87,23 +98,21 @@ Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion' " TODO: figure this one out
-Plug 'lokaltog/vim-powerline'
-Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
 Plug 'klen/python-mode'
 Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'ensime/ensime-vim'
-"Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-markdown'
-"Plug 'megaannum/vimside'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'burnettk/vim-angular'
-Plug 'vim-airline/vim-airline' " Improvised statusline-airline configurations
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+" Plug 'lokaltog/vim-powerline'
+" Plug 'megaannum/vimside'
+" Plug 'dscleaver/sbt-quickfix'
+" Plug 'xolox/vim-notes'
 set laststatus=2
 
 au! BufRead,BufNewFile *.json set filetype=json
@@ -148,14 +157,16 @@ au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#
 " Close vim if nerdtree is the only open tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
 " mappings
 map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Navigation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map <C-Left> b TODO >> fix key-bindings in normal mode
 " map <C-Right> w
 
-colorscheme jellyx
-" Favourites > desert256v2 Candypaper 256-jungle molokai
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
 " settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
@@ -168,15 +179,28 @@ colorscheme jellyx
 " options, so any other options should be set AFTER setting 'compatible'.
 " set compatible
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Colors and fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting by default.
-if has("syntax")
-  syntax on
-endif
+syntax enable
+" Colorscheme
+set background=dark
+colorscheme peaksea
+" Favourites > desert256v2 Candypaper 256-jungle molokai
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-" set background=dark
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Statusline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_theme='jellybeans'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helper functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make vim jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
