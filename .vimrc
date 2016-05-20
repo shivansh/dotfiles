@@ -43,7 +43,6 @@ set directory^=~/.vim/temp
 " so Vim will check that directory first.
 
 
-let g:neocomplcache_enable_at_startup = 1
 " let g:Powerline_symbols = 'fancy'
 call plug#begin('~/.vim/plugged')
 
@@ -60,11 +59,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'walm/jshint.vim'
 " Autocompletion plugin
 Plug 'Shougo/neocomplcache.vim'
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
-" Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -77,9 +71,6 @@ Plug 'flazz/vim-colorschemes'
 " let g:molokai_original = 1
 " let g:rehash256 = 1
 Plug 'scrooloose/syntastic' " Syntax checking for vim
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -123,7 +114,6 @@ autocmd FileType json set formatoptions=tcq2l
 autocmd FileType json set textwidth=78 shiftwidth=2
 
 autocmd FileType json set noexpandtab
-" autocmd vimenter * NERDTree << uncomment to toggle automatically
 " autocmd FileType json set foldmethod=syntax
 augroup END
 call plug#end()
@@ -132,6 +122,23 @@ filetype plugin indent on
 
 "autocmd BufWritePost *.scala :EnTypeCheck
 "nnoremap <localleader>t :EnTypeCheck<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocomplete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" AutoComplPop like behavior.
+let g:neocomplcache_enable_auto_select = 1
+" Enable omni completion.
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> NerdTree configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autocmd vimenter * NERDTree << uncomment to toggle automatically
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -157,9 +164,9 @@ au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#
 " Close vim if nerdtree is the only open tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
-" mappings
+" Mappings
 map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
@@ -188,7 +195,7 @@ syntax enable
 " Colorscheme
 set background=dark
 colorscheme peaksea
-" Favourites > desert256v2 Candypaper 256-jungle molokai
+" Favourites > desert256v2 Candypaper 256-jungle molokai jellybeans
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -196,6 +203,11 @@ colorscheme peaksea
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_theme='jellybeans'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
