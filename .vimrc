@@ -212,7 +212,15 @@ let g:airline_right_sep=''
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper functions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Turn on persistent undo, which means you can undo even 
+" when you close the buffers
+try 
+  set undodir=~/.vim/temp/undodir
+  set undofile
+catch
+endtry
+
 " Make vim jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
