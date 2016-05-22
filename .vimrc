@@ -2,24 +2,36 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-set term=screen-256color
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set the number of lines vim has to remember
+set history=100
 set ignorecase
-set nu 
+set nu
 set rnu
 set sidescroll=1
 set showcmd
 set showmatch
 set incsearch
-set hlsearch
 set autoread
-set shiftwidth=2 " size of an indent
 " set autowrite	 " Automatically save before commands like :next and :make
 " set hidden		 " Hide buffers when they are abandoned
-set wrap
-set linebreak
-set textwidth=0
-set wrapmargin=0
 set mouse=a
+
+" Use this whenever <leader> is encountered
+let mapleader="."
+let g:mapleader="."
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The awesome autocomplete window which you see on the statusbar :)
+set wildmenu
+set term=screen-256color
+set hlsearch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -29,10 +41,16 @@ set tabstop=2
 set expandtab    " insert space(governed by the value of tabstop) instead of tab
 set smarttab     " make tab insert indents instead of tabs at the beginning of a line
 set copyindent
-set autoindent 
+set autoindent
 set smartindent
 set smartcase
 set ignorecase
+set wrap
+set shiftwidth=2 " size of an indent
+set linebreak
+set textwidth=0
+set wrapmargin=0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Swapfiles and backup
@@ -43,39 +61,16 @@ set directory^=~/.vim/temp
 " so Vim will check that directory first.
 
 
-" let g:Powerline_symbols = 'fancy'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
-" NERDcommenter mapping
-nmap // <leader>ci
-" by default <leader> is mapped to \
-
-" Indentation
-Plug 'nathanaelkane/vim-indent-guides'
-" C++ autocompletion support
-" Plug 'OmniCppComplete'
-" JavaScript syntax checking
-Plug 'walm/jshint.vim'
-" Autocompletion plugin
+Plug 'yggdroot/indentline'
+Plug 'walm/jshint.vim' " JavaScript syntax checking
 Plug 'Shougo/neocomplcache.vim'
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
-" Plug 'tomasr/molokai'
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-Plug 'scrooloose/syntastic' " Syntax checking for vim
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
 Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -92,40 +87,65 @@ Plug 'easymotion/vim-easymotion' " TODO: figure this one out
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
-Plug 'klen/python-mode'
 Plug 'vim-scripts/HTML-AutoCloseTag'
-Plug 'ensime/ensime-vim'
 Plug 'tpope/vim-markdown'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'pangloss/vim-javascript'
+" Plug 'ensime/ensime-vim'
+" Plug 'klen/python-mode'
 " Plug 'lokaltog/vim-powerline'
 " Plug 'megaannum/vimside'
 " Plug 'dscleaver/sbt-quickfix'
 " Plug 'xolox/vim-notes'
-set laststatus=2
+" Plug 'tomasr/molokai'
+" Plug 'OmniCppComplete'
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+augroup END
+call plug#end()
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Syntax checking and auto-complete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType json set foldmethod=syntax
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Indentation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:indent_guides_auto_colors=1
+" let g:indent_guides_start_level=4
+" let g:indent_guides_guide_size=0
+let g:indentLine_enabled = 1
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
 autocmd!
 autocmd FileType json set autoindent
 autocmd FileType json set formatoptions=tcq2l
 autocmd FileType json set textwidth=78 shiftwidth=2
-
 autocmd FileType json set noexpandtab
-" autocmd FileType json set foldmethod=syntax
-augroup END
-call plug#end()
-
 filetype plugin indent on
-
-"autocmd BufWritePost *.scala :EnTypeCheck
-"nnoremap <localleader>t :EnTypeCheck<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocomplete
+" >> Autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
@@ -164,8 +184,14 @@ au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#
 " Close vim if nerdtree is the only open tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Mappings
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+" NERDcommenter mapping
+nmap // <leader>ci
+" by default <leader> is mapped to \
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,6 +199,11 @@ map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map <C-Left> b TODO >> fix key-bindings in normal mode
 " map <C-Right> w
+
+" Bash like keys
+cmap <C-a> <Home>
+cmap <C-e> <End>
+
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
@@ -205,17 +236,28 @@ let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_theme='jellybeans'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
+
+" Always show statusline
+set laststatus=2
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Turn on persistent undo, which means you can undo even 
+" Delete trailing white-spaces on save
+func! DeleteTrailingWS()
+  %s/\s\+$//ge
+endfunc
+autocmd BufWritePre * :call DeleteTrailingWS()
+
+
+" >> Turn on persistent undo, which means you can undo even
 " when you close the buffers
-try 
+try
   set undodir=~/.vim/temp/undodir
   set undofile
 catch
