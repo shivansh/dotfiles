@@ -45,8 +45,13 @@ set sidescroll=1
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=2
-set expandtab    " insert space(governed by the value of tabstop) instead of tab
-set smarttab     " make tab insert indents instead of tabs at the beginning of a line
+
+" insert space(governed by the value of tabstop) instead of tab
+set expandtab
+
+" make tab insert indents instead of tabs at the beginning of a line
+set smarttab
+
 set copyindent
 set autoindent
 set smartindent
@@ -58,6 +63,8 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
+" Automatically indent on saving
+map <F5> mzgg=G`z
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Swapfiles and backup
@@ -114,7 +121,6 @@ Plug 'scrooloose/syntastic'
 " Plug 'OmniCppComplete'
 " let g:molokai_original = 1
 " let g:rehash256 = 1
-augroup END
 call plug#end()
 
 
@@ -143,12 +149,13 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:indentLine_enabled = 1
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
-autocmd!
-autocmd FileType json set autoindent
-autocmd FileType json set formatoptions=tcq2l
-autocmd FileType json set textwidth=78 shiftwidth=2
-autocmd FileType json set noexpandtab
-filetype plugin indent on
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set noexpandtab
+  filetype plugin indent on
+augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,8 +176,8 @@ let g:neocomplcache_enable_auto_select = 1
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 au VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
