@@ -9,11 +9,7 @@ runtime! debian.vim
 " Set the number of lines vim has to remember
 set history=100
 set ignorecase
-set nu
-set rnu
-set sidescroll=1
 set showcmd
-set showmatch
 set incsearch
 set autoread
 " set autowrite	 " Automatically save before commands like :next and :make
@@ -24,6 +20,13 @@ set mouse=a
 let mapleader="."
 let g:mapleader="."
 
+" Fast saving (no need to search for ! now :P)
+nmap <Leader>w :w!<CR>
+
+" Ever got permission denied error while editing ??
+" :W comes handy now
+command W w !sudo tee % > /dev/null
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Interface
@@ -32,6 +35,10 @@ let g:mapleader="."
 set wildmenu
 set term=screen-256color
 set hlsearch
+set nu
+set rnu
+set showmatch
+set sidescroll=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,13 +96,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
 Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'tpope/vim-markdown'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'kien/rainbow_parentheses.vim'
 " Plug 'pangloss/vim-javascript'
 " Plug 'ensime/ensime-vim'
 " Plug 'klen/python-mode'
@@ -192,6 +199,7 @@ map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 " NERDcommenter mapping
 nmap // <leader>ci
 " by default <leader> is mapped to \
+map <C-i> :IndentLinesToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
