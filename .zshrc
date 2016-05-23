@@ -16,7 +16,7 @@ ZSH_THEME="agnoster"
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
-# Using noclobber to avoid accidental overwriting of files 
+# Using noclobber to avoid accidental overwriting of files
 # with the > redirection
 set -o noclobber
 # Uncomment the following line to use case-sensitive completion.
@@ -43,6 +43,9 @@ ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
+
+# Disable keybindings like Ctrl+D which accidentally close the terminal session
+set -o ignoreeof
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -111,3 +114,5 @@ alias sapi="sap install"
 alias gpfom="git push -f origin master"
 alias go="gnome-open" # an awesome file-handler
 alias dt="git difftool"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

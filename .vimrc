@@ -102,11 +102,12 @@ Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'derekwyatt/vim-scala'
 Plug 'vim-scripts/HTML-AutoCloseTag'
-Plug 'tpope/vim-markdown'
 Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'tpope/vim-markdown'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'
@@ -202,7 +203,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-j> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+" Nerdtree mappings
+map <F2> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+"map <C-S-l> :tabNext<CR>
+"map <C-S-h> :tabp<CR>
+"map <C-S-n> :tabnew<CR>
+
+" The heavenly >> fzf
+map <F4> :FZF<CR>
+
 " NERDcommenter mapping
 nmap // <leader>ci
 " by default <leader> is mapped to \
