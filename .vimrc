@@ -63,7 +63,7 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
-" Automatically indent on saving
+" Automatic indentation
 map <F5> mzgg=G`z
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -127,14 +127,14 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 ## Assign section
-assign [window_role="^browser$"]     → $w1
-for_window [window_role="^browser$"] focus
-assign [window_role="^Gnome-terminal$"]  → $w2
-for_window [window_role="^Terminal$"] focus
-assign [window_role="^Nautilus$"]    → $w3
-for_window [window_role="^Nautilus$"] focus
-assign [window_role="^Atom"]         → $w6
-for_window [window_role="^Atom$"] focus
+# assign [window_role="^browser$"]     → $w1
+# for_window [window_role="^browser$"] focus
+# assign [window_role="^Gnome-terminal$"]  → $w2
+# for_window [window_role="^Terminal$"] focus
+# assign [window_role="^Nautilus$"]    → $w3
+# for_window [window_role="^Nautilus$"] focus
+# assign [window_role="^Atom"]         → $w6
+# for_window [window_role="^Atom$"] focus
 
 # next/previous workspace
 bindsym $TAB+$ALT workspace prev
