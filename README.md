@@ -11,9 +11,8 @@
 ===
 Collection of all the configuration files
 
-===
-
 ##ToDo
+* Make the installion script
 
 * ~~Change the current mapping `<Ctrl-n>` for nerdtree and multiple-cursors~~ **&#x2713;**
 
