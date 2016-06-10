@@ -1,7 +1,8 @@
 # zsh -c 'export PS1="%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 # )
- #%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
+# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
 
+# Background > #173448
 cowsay "$(fortune)"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/zeebu/.oh-my-zsh

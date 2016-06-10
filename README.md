@@ -11,6 +11,11 @@
 ===
 Collection of all the configuration files
 
+##Requirements
+* Curl
+* Powerline
+* Vim-plug
+
 ##ToDo
 * Make the installion script
 
