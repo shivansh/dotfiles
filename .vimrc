@@ -278,14 +278,13 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWritePre * :call DeleteTrailingWS()
 
-
-" >> Turn on persistent undo, which means you can undo even
+" Turn on persistent undo, which means you can undo even
 " when you close the buffers
-try
-  set undodir=~/.vim/temp/undodir
-  set undofile
-catch
-endtry
+" try
+"   set undodir=~/.vim/temp/undodir
+"   set undofile
+" catch
+" endtry
 
 " Make vim jump to the last position when reopening a file
 if has("autocmd")
