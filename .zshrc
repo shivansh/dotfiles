@@ -115,11 +115,7 @@ alias sapi="sap install"
 alias gpfom="git push -f origin master"
 alias go="gnome-open" # an awesome file-handler
 alias dt="git difftool"
+alias gcam="git commit -S -a -m"
+alias gc="git commit -S"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/zeebu/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/home/zeebu/google-cloud-sdk/completion.zsh.inc'
