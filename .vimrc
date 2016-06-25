@@ -218,6 +218,9 @@ nmap // <leader>ci
 " by default <leader> is mapped to \
 map <C-i> :IndentLinesToggle<CR>
 
+" Proves to be very productive
+map ; :
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation

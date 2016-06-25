@@ -1,15 +1,14 @@
+#rc-Configs
+Collection of all the configuration files made to ease and speed up the significant part of my life spent on terminal. They serve as a means of procrastination too.
+
 ```
-            _____              __ _                       _   _
-           /  __ \            / _(_)                     | | (_)
- _ __ ___  | /  \/ ___  _ __ | |_ _  __ _ _   _ _ __ __ _| |_ _  ___  _ __  ___
-| '__/ __| | |    / _ \| '_ \|  _| |/ _` | | | | '__/ _` | __| |/ _ \| '_ \/ __|
-| | | (__  | \__/\ (_) | | | | | | | (_| | |_| | | | (_| | |_| | (_) | | | \__ \
-|_|  \___|  \____/\___/|_| |_|_| |_|\__, |\__,_|_|  \__,_|\__|_|\___/|_| |_|___/
-                                     __/ |
-                                    |___/
+                  _________            ____________
+______________    __  ____/_______________  __/__(_)______ ________
+__  ___/  ___/    _  /    _  __ \_  __ \_  /_ __  /__  __ `/_  ___/
+_  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
+/_/    \___/      \____/  \____//_/ /_//_/    /_/  _\__, / /____/
+                                                   /____/
 ```
-===
-Collection of all the configuration files
 
 ##Requirements
 * Curl
@@ -17,12 +16,6 @@ Collection of all the configuration files
 * Vim-plug
 
 ##ToDo
-* Make the installion script
-
-* ~~Change the current mapping `<Ctrl-n>` for nerdtree and multiple-cursors~~ **&#x2713;**
-
-* ~~Integrated feh in desktop background~~ **&#x2713;**
-
-* Fix key-bindings `<Ctrl-arrow>` in normal mode
-
-* Enable `:set paste` by default, without disabling neocomplcache
+* Make the installion script.
+* Script for automatically updating symlinks on changing folder name.
+* Fix key-bindings `<Ctrl-arrow>` in normal mode.
