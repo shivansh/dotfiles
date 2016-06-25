@@ -108,6 +108,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'tpope/vim-markdown'
+Plug 'mhinz/vim-startify'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'
