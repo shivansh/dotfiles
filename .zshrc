@@ -83,7 +83,10 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR=vim
+
+# Some programs use VISUAL instead of EDITOR
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 export PATH="$HOME/arc/arcanist/bin:$PATH"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -110,7 +113,7 @@ alias z="zathura"
 alias ss="sudo service"
 alias N="nautilus --no-desktop"
 alias j="jump"
-alias vi="vim"
+alias vi="nvim"
 alias sapi="sap install"
 alias gpfom="git push -f origin master"
 alias go="gnome-open" # an awesome file-handler
