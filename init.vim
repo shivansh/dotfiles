@@ -210,7 +210,7 @@ map <F2> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 "map <C-S-h> :tabp<CR>
 "map <C-S-n> :tabnew<CR>
 
-" The heavenly >> fzf
+" The awesome fzf
 map <F4> :FZF<CR>
 
 " NERDcommenter mapping
@@ -220,7 +220,6 @@ map <C-i> :IndentLinesToggle<CR>
 
 " Proves to be very productive
 map ; :
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
