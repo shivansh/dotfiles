@@ -1,0 +1,24 @@
+[user]
+	name = Shivansh Rai
+	email = shivanshrai84@gmail.com
+	signingkey = BDF08F0B
+
+[core]
+	editor = vim
+
+[diff]
+	tool = vimdiff
+	compactionHeuristic = true
+
+[difftool]
+	prompt = false
+
+[alias]
+	d = difftool
+
+[commit]
+	gpgsign = true
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = http://github.com/
