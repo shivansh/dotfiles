@@ -1,5 +1,5 @@
 #rc-Configs
-Collection of all the configuration files made to ease and speed up the significant part of my life spent on terminal. They serve as a means of procrastination too.
+Collection of all the configuration files made to ease and speed up the significant part of my life spent on shell. Well, these serve as a means of procrastination too.
 
 ```
                   _________            ____________
@@ -11,11 +11,16 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
 ```
 
 ##Requirements
-* Curl
-* Powerline
-* Vim-plug
+* zsh
+* curl
+* Powerline fonts
+* Vim-Plug (for plugin management)
+* neovim/vim
+
+##Installation
+* Run `bash env-setup.sh`
+* For installing the vim plugins, just run `:PlugInstall` from inside your vim buffer.
 
 ##ToDo
-* Make the installion script.
 * Script for automatically updating symlinks on changing folder name.
 * Fix key-bindings `<Ctrl-arrow>` in normal mode.
