@@ -148,7 +148,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " let g:indent_guides_auto_colors=1
 " let g:indent_guides_start_level=4
 " let g:indent_guides_guide_size=0
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
   autocmd!
