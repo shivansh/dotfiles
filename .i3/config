@@ -27,6 +27,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start battery notifications script
+exec --no-startup-id scripts/i3-battery-popup
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -135,6 +138,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 # for_window [window_role="^Nautilus$"] focus
 # assign [window_role="^Atom"]         → $w6
 # for_window [window_role="^Atom$"] focus
+
+# Sticky window for battery warning
+for_window [title="Battery Warning"] sticky enable<Paste>
 
 # next/previous workspace
 bindsym $TAB+$ALT workspace prev
