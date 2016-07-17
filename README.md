@@ -12,14 +12,15 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
 
 ##Requirements
 * zsh
-* curl
-* Powerline fonts
-* Vim-Plug (for plugin management)
+* [oh-my-zsh](https://github.com/powerline/fonts#powerline-fonts)
+* `curl` or `wget`
+* [Powerline fonts](https://github.com/powerline/fonts#powerline-fonts)
+* [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
 * neovim/vim
 
 ##Installation
-* Run `bash env-setup.sh`
-* For installing the vim plugins, just run `:PlugInstall` from inside your vim buffer.
+* Clone the repo and run `bash env-setup.sh`. All your current configuration files will be backed up and can be referenced later by `*.backup`.
+* For installing the vim plugins, run `:PlugInstall` from inside your vim buffer (if you are using vim-plug).
 
 ##ToDo
 * Script for automatically updating symlinks on changing folder name.
