@@ -162,8 +162,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym $mod+Shift+t exec --no-startup-id xinput disable 'Touchpad'
-bindsym $mod+t exec --no-startup-id xinput enable 'Touchpad'
+bindsym $mod+Shift+t exec --no-startup-id xinput set-prop 12 "Device Enabled" 0
+bindsym $mod+t exec --no-startup-id xinput set-prop 12 "Device Enabled" 1
 
 #set $mode_system System (h) hibernate
 #mode "$mode_system" {
