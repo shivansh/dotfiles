@@ -98,9 +98,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #workspaces defined
-set $w1 k:main
-set $w2 j:vim
-set $w3 h:desktop
+set $w1 k:web
+set $w2 j:nvim
+set $w3 h:GUI
 set $w4 l:ssh
 set $w5 u:irc
 set $w6 i:ide
@@ -143,7 +143,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 for_window [title="Battery Warning"] sticky enable<Paste>
 
 # next/previous workspace
-bindsym $TAB+$ALT workspace prev
+bindsym $ALT+$TAB workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
