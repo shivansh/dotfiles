@@ -105,6 +105,8 @@ set $w4 l:ssh
 set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
+set $w8 p:music
+
 # switch to workspace
 bindsym $mod+k workspace $w1
 bindsym $mod+j workspace $w2
@@ -113,7 +115,7 @@ bindsym $mod+l workspace $w4
 bindsym $mod+u workspace $w5
 bindsym $mod+i workspace $w6
 bindsym $mod+o workspace $w7
-bindsym $mod+p workspace 8
+bindsym $mod+p workspace $w8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
@@ -125,7 +127,7 @@ bindsym $mod+Shift+l move container to workspace $w4
 bindsym $mod+Shift+u move container to workspace $w5
 bindsym $mod+Shift+i move container to workspace $w6
 bindsym $mod+Shift+o move container to workspace $w7
-bindsym $mod+Shift+p move container to workspace 8
+bindsym $mod+Shift+p move container to workspace $w8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 

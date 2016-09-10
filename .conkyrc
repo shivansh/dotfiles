@@ -2,7 +2,7 @@
 ## Output is printed to the console -> i3bar
 # Modified: 27.11.2011 - mseed : http://www.fastlinux.eu
 
-### 
+###
 # use_xft yes
 # xftfont Helvetica:size=15
 # xftalpha 0.9
@@ -23,7 +23,7 @@ double_buffer no
 background no
 
 ## Update interval in seconds
-update_interval 2.0
+update_interval 20.0
 
 ## This is the number of times Conky will update before quitting.
 ## Set to zero to run forever.
@@ -35,7 +35,7 @@ short_units yes
 ## How strict should if_up be when testing an interface for being up?
 ## The value is one of up, link or address, to check for the interface
 ## being solely up, being up and having link or being up, having link
-## and an assigned IP address. 
+## and an assigned IP address.
 if_up_strictness address
 
 ## Add spaces to keep things from moving about?  This only affects certain objects.
@@ -52,11 +52,11 @@ cpu_avg_samples 2
 ## Sensors examples
 # Top Process: ${top name 1}
 # Root: {fs_used /}/${fs_size /} /home ${fs_free /home} /${fs_size /home}
-# Load: ${loadavg 1} ${loadavg 2} ${loadavg 3} 
+# Load: ${loadavg 1} ${loadavg 2} ${loadavg 3}
 # Load: $loadavg
 # Swap: ${swap}/${swapmax} (${swapperc}%)
 # Processes: ${running_processes} / ${processes}
-# CPU: $cpu% 
+# CPU: $cpu%
 # HDD: $diskio_read :Read $diskio_write :Write
 # Temp: Core0: ${exec sensors | awk '/Core 0/ {print $3}'} Core1: ${exec sensors | awk '/Core 1/ {print $3}'}
 # Freq: ${freq cpu0}Mhz
@@ -80,5 +80,3 @@ TEXT
 {"full_text" : "0 ${battery BAT0} 1 ${battery BAT1}", "color" : "\#C4FCF1"},
 {"full_text" : "♪: ${exec pactl list sinks | grep "Volume: 0"| tail -n 1 | awk '{print substr($3, 1, index($3, "%") - 1)}'}%", "color" : "\#EAD5FF"},
 {"full_text" : "${time %a %d-%m-%y} ${time %H:%M:%S}", "color" : "\#FCC4C7"},
-    
-
