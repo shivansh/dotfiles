@@ -105,7 +105,7 @@ set $w4 l:ssh
 set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
-set $w8 p:music
+set $w8 p:media
 
 # switch to workspace
 bindsym $mod+k workspace $w1
@@ -164,8 +164,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym $mod+Shift+t exec --no-startup-id xinput set-prop 12 "Device Enabled" 0
-bindsym $mod+t exec --no-startup-id xinput set-prop 12 "Device Enabled" 1
+bindsym $mod+Shift+t exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
+bindsym $mod+t exec --no-startup-id xinput set-prop 11 "Device Enabled" 1
 
 #set $mode_system System (h) hibernate
 #mode "$mode_system" {
