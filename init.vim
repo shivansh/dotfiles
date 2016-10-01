@@ -45,6 +45,8 @@ set sidescroll=1
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2 " size of an indent
 
 " insert space(governed by the value of tabstop) instead of tab
 set expandtab
@@ -58,7 +60,6 @@ set smartindent
 set smartcase
 set ignorecase
 set wrap
-set shiftwidth=2 " size of an indent
 set linebreak
 set textwidth=0
 set wrapmargin=0
