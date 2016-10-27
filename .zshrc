@@ -122,3 +122,6 @@ alias gcam="git commit -S -a -m"
 alias gc="git commit -S"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
+

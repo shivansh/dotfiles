@@ -11,7 +11,7 @@ set history=100
 set ignorecase
 set showcmd
 set incsearch
-set autoread
+set autoread     " Dynamically update log files
 " set autowrite	 " Automatically save before commands like :next and :make
 " set hidden		 " Hide buffers when they are abandoned
 set mouse=a
@@ -39,6 +39,7 @@ set nu
 set rnu
 set showmatch
 set sidescroll=1
+set splitbelow
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,6 +111,8 @@ Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'tpope/vim-markdown'
 Plug 'mhinz/vim-startify'
+Plug 'sirver/ultisnips'
+Plug 'davidhalter/jedi-vim'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'

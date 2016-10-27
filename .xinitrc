@@ -1,2 +1,2 @@
 xmodmap ~/.xmodmap
-xbacklight -set 9
+xbacklight -set 6
