@@ -1,27 +1,24 @@
+#!/bin/bash
+
 # Check if zsh is already installed
-# apt-cache policy zsh | grep 'Installed'
-# if [ $? = 1 ]; then
-#   sudo apt-get update -y
-#   sudo apt-get install zsh -y
-#   wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-#   chsh -s `which zsh`
-# fi
+apt-cache policy zsh | grep 'Installed' > /dev/null 2>&1
 
-# Install vim-plug
-# curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [[ $? -ne 0 ]]; then
+  echo 'zsh is not installed!! Please install it first.'
+else
+  # Backup all the existing config files
+  echo 'Backing up...'
+  mv $HOME/.vimrc $HOME/.vimrc.backup
+  mv $HOME/.zshrc $HOME/.zshrc.backup
+  mv $HOME/.bashrc $HOME/.bashrc.backup
 
-cp ../zsh-themes/{agnoster.zsh-theme,cobalt2.zsh-theme} $HOME/.oh-my-zsh/themes/
+  echo 'Updating...'
+  ln -s $HOME/configs/.vimrc $HOME/.vimrc
+  ln -s $HOME/configs/.zshrc $HOME/.zshrc
+  ln -s $HOME/configs/.bashrc $HOME/.bashrc
+  ln -s $HOME/configs/.xinitrc $HOME/.xinitrc
+  ln -s $HOME/configs/.xmodmad $HOME/.xmodmap
 
-# Backup all the existing config files
-mv $HOME/.vimrc $HOME/.vimrc.backup
-mv $HOME/.zshrc $HOME/.zshrc.backup
-mv $HOME/.bashrc $HOME/.bashrc.backup
-
-ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
-ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/dotfiles/.bashrc $HOME/.bashrc
-ln -s $HOME/dotfiles/.xinitrc $HOME/.xinitrc
-ln -s $HOME/dotfiles/.xmodmad $HOME/.xmodmap
-
-source $HOME/.zshrc
+  source $HOME/.zshrc
+  echo 'Success!!'
+fi

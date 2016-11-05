@@ -12,7 +12,7 @@ set ignorecase
 set showcmd
 set incsearch
 set autoread     " Dynamically update log files
-" set autowrite	 " Automatically save before commands like :next and :make
+set autowrite	 " Automatically save before commands like :next and :make
 " set hidden		 " Hide buffers when they are abandoned
 set mouse=a
 
