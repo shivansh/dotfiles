@@ -65,9 +65,6 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
-" Automatic indentation
-map <F5> mzgg=G`z
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Swapfiles and backup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -225,6 +222,10 @@ map <C-i> :IndentLinesToggle<CR>
 " Proves to be very productive
 map ; :
 
+" Automatic indentation
+map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -283,7 +284,8 @@ set laststatus=2
 func! DeleteTrailingWS()
   %s/\s\+$//ge
 endfunc
-autocmd BufWritePre * :call DeleteTrailingWS()
+
+autocmd VimLeave * :call DeleteTrailingWS()
 
 " Turn on persistent undo, which means you can undo even
 " when you close the buffers
