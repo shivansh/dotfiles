@@ -66,7 +66,7 @@ set -o ignoreeof
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages jump colorize cp zsh-syntax-highlighting gpg-agent)
+plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent)
 
 # User configuration
 
@@ -112,7 +112,6 @@ alias gla="glances -t 1"
 alias grf="git reflog"
 alias z="zathura"
 alias N="nautilus --no-desktop"
-alias j="jump"
 alias vi="nvim"
 alias sapi="sap install"
 alias gpfom="git push -f origin master"
