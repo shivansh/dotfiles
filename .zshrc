@@ -100,25 +100,11 @@ export PATH="$HOME/arc/arcanist/bin:$PATH"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# alias for git push origin master
-alias gpom="git push origin master"
-alias glom="git pull origin master"
-alias y="youtube-dl"
-alias sap="sudo apt-get"
-alias gla="glances -t 1"
-alias grf="git reflog"
-alias z="zathura"
-alias N="nautilus --no-desktop"
-alias vi="nvim"
-alias sapi="sap install"
-alias gpfom="git push -f origin master"
-alias go="gnome-open" # an awesome file-handler
-alias dt="git difftool"
-alias gcam="git commit -S -a -m"
-alias gc="git commit -S"
+
+# Load aliases
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
