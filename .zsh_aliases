@@ -15,3 +15,4 @@ alias go="gnome-open" # an awesome file-handler
 alias dt="git difftool"
 alias gcam="git commit -S -a -m"
 alias gc="git commit -S"
+alias clip="xclip -se c"
