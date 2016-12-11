@@ -5,7 +5,7 @@
 
 sudo bash -c '{
 echo "#!/bin/bash"
-echo "xbacklight =15 || true"
+echo "xbacklight = 6 || true"
 } >> /etc/lightdm/display-setup-script.sh '
 
 # This makes that script executable

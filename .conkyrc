@@ -17,13 +17,13 @@ own_window no
 out_to_console yes
 
 ## Use double buffering (reduces flicker, not needed for console output)
-double_buffer no
+double_buffer yes
 
 ## Set to yes if you want Conky to be forked in the background
 background no
 
 ## Update interval in seconds
-update_interval 20.0
+update_interval 5.0
 
 ## This is the number of times Conky will update before quitting.
 ## Set to zero to run forever.
@@ -67,16 +67,11 @@ cpu_avg_samples 2
 
 ## Stuff after 'TEXT' will be formatted on screen
 TEXT
-
 [
-{"full_text" : "${if_up eth0}eth0 ${addr eth0}", "color" : "\#FF8C83"},
-{"full_text" : "${if_up wlan0}wlan0 ${addr wlan0}", "color" : "\#FF8C83"},
-{"full_text" : "/ ${fs_free /}", "color": "\#FFE557"},
-{"full_text" : "~${fs_free /home}" , "color" : "\#ffffff", "color" : "\#FFE557"},
-{"full_text" : "CPU ${cpu cpu1}% ${exec sensors | grep -m 1 "Core 0"|awk '{print $3}'}", "color" : "\#7CFF00"},
-{"full_text" : "RAM ${memperc}%" , "color" :
-  ${if_match ${memperc}<90}"\#FFB300"${else}"\#ff0000"${endif} }],
-#{"full_text" : "${swap}/${swapmax} (${swapperc}%)"},
-{"full_text" : "0 ${battery BAT0} 1 ${battery BAT1}", "color" : "\#26F3F1"},
-{"full_text" : "♪: ${exec pactl list sinks | grep "Volume: 0"| tail -n 1 | awk '{print substr($3, 1, index($3, "%") - 1)}'}%", "color" : "\#EAD5FF"},
+{"full_text" : "${if_up eth0}eth:${addr eth0}", "color" : "\#FF8C83"},
+{"full_text" : "${if_up wlan0}wlan:${addr wlan0}", "color" : "\#FF8C83"},
+{"full_text" : "CPU ${cpu}% ${execi 10 sensors | grep -m 1 "Core 0"|awk '{print $3}'}", "color" : "\#7CFF00"},
+{"full_text" : "RAM ${memperc}%" , "color" : "\#FFB300" },
+{"full_text" : "0:${battery BAT0} 1:${battery BAT1}", "color" : "\#26F3F1"},
+{"full_text" : "♪:${execi 60 pactl list sinks | grep "Volume: 0"| tail -n 1 | awk '{print substr($3, 1, index($3, "%") - 1)}'}%", "color" : "\#EAD5FF"},
 {"full_text" : "${time %a %d-%m-%y} ${time %H:%M:%S}", "color" : "\#FCC4C7"},

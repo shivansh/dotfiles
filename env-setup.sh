@@ -7,13 +7,13 @@ rc_list=(".vimrc" ".bashrc" ".zshrc" ".zsh_aliases" ".conkyrc"
 # Check if zsh is already installed
 apt-cache policy zsh | grep 'Installed' &> /dev/null
 
-if [[ $? -ne 0 ]]; then
+if [ $? -ne 0 ]; then
   echo 'zsh is not installed!! Please install it first.'
 
 else
   echo 'Found zsh!! Backing up...'
   for rc_file in ${rc_list[@]}; do
-    if [ -f $rc_file ] || [ -L $rc_file ]; then
+    if [[ -f $rc_file || -L $rc_file ]]; then
       mv $HOME/$rc_file $HOME/$rc_file.backup
     fi
 

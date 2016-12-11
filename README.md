@@ -11,19 +11,19 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
 ```
 
 ## Requirements
+* neovim/vim
 * zsh
-* [oh-my-zsh](https://github.com/powerline/fonts#powerline-fonts)
+* [oh-my-zsh](http://ohmyz.sh/)
 * [Powerline fonts](https://github.com/powerline/fonts#powerline-fonts)
 * [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
-* neovim/vim
 
 ## Installation
 The installation script is brief:
 ```
 git clone https://github.com/shivrai/dotfiles.git ~/dotfiles
-bash env-setup.sh
+./env-setup.sh
 ```
-All your current configuration files will be backed up and can be referenced later by `*.backup`.
+Your current configuration files (_refer next section_) will be backed up and can be referenced later by `*.backup`.
 
 ### Custom installation
 For cherry-picking, update the list `rc_list` in `env-setup.sh` with all the configuration files that are required.
