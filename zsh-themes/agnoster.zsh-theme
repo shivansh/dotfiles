@@ -125,7 +125,7 @@ if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
   zstyle ':vcs_info:*' get-revision true
   zstyle ':vcs_info:*' check-for-changes true
   zstyle ':vcs_info:*' stagedstr '☺'
-  zstyle ':vcs_info:*' unstagedstr '☹ ' # ● ✚
+  zstyle ':vcs_info:*' unstagedstr '☹ '
   zstyle ':vcs_info:*' formats ' %u%c'
   zstyle ':vcs_info:*' actionformats ' %u%c'
   vcs_info
@@ -205,17 +205,27 @@ prompt_virtualenv() {
 }
 
 # Status:
-# - was there an error
-# - am I root
-# - are there background jobs?
+# - was there an error ----------- ✘
+# - am I root -------------------- ✔
+# - are there background jobs? --- ✔
 prompt_status() {
   local symbols
   symbols=()
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  # [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
+check_exit_code() {
+  local RETVAL=$?
+  if [[ $RETVAL -ne 0 ]]; then
+    echo -n "%F{white}$RSEGMENT_SEPARATOR"
+    prompt_segment white
+    local EXIT_CODE_PROMPT="%F{black}$RETVAL "
+    echo "%F{black}$EXIT_CODE_PROMPT"
+  fi
 }
 
 ## Main prompt
@@ -234,4 +244,4 @@ build_prompt() {
 PROMPT='%{%f%b%k%}$(build_prompt)
 ▶ '
 
-RPROMPT=%F{red}$RSEGMENT_SEPARATOR'$(prompt_right)'
+RPROMPT='$(check_exit_code)'%F{red}$RSEGMENT_SEPARATOR'$(prompt_right)'
