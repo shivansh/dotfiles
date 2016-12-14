@@ -21,7 +21,7 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
 The installation script is brief:
 ```
 git clone https://github.com/shivrai/dotfiles.git ~/dotfiles
-./env-setup.sh
+./env-setup
 ```
 Your current configuration files (_refer next section_) will be backed up and can be referenced later by `*.backup`.
 

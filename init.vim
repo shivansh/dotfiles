@@ -12,7 +12,7 @@ set ignorecase
 set showcmd
 set incsearch
 set autoread     " Dynamically update log files
-set autowrite	 " Automatically save before commands like :next and :make
+set autowrite	   " Automatically save before commands like :next and :make
 " set hidden		 " Hide buffers when they are abandoned
 set mouse=a
 
@@ -80,36 +80,36 @@ set directory^=~/.vim/temp
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
-Plug 'yggdroot/indentline'
-Plug 'walm/jshint.vim' " JavaScript syntax checking
-Plug 'Shougo/neocomplcache.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'Townk/vim-autoclose'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'yggdroot/indentline'
+Plug 'walm/jshint.vim'                   " JavaScript syntax checking
+Plug 'Shougo/neocomplcache.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'townk/vim-autoclose'
+Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'edsono/vim-matchit'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'ervandew/supertab'
 Plug 'anyakichi/vim-surround'
-Plug 'elzr/vim-json'
-Plug 'leafgarland/typescript-vim'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion' " TODO: figure this one out
+Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'derekwyatt/vim-scala'
-Plug 'vim-scripts/HTML-AutoCloseTag'
-Plug 'burnettk/vim-angular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'tpope/vim-markdown'
 Plug 'mhinz/vim-startify'
 Plug 'sirver/ultisnips'
 Plug 'davidhalter/jedi-vim'
+Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
+Plug 'leafgarland/typescript-vim'
+Plug 'derekwyatt/vim-scala'
+" Plug 'elzr/vim-json'
+" Plug 'burnettk/vim-angular'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+" Plug 'tpope/vim-markdown'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'
@@ -285,7 +285,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
 endfunc
 
-autocmd VimLeave * :call DeleteTrailingWS()
+au VimLeave * DeleteTrailingWS()
 
 " Turn on persistent undo, which means you can undo even
 " when you close the buffers
