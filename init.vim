@@ -106,6 +106,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
 Plug 'leafgarland/typescript-vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'kshenoy/vim-signature'             " Show markers
 " Plug 'elzr/vim-json'
 " Plug 'burnettk/vim-angular'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }

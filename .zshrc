@@ -1,9 +1,7 @@
-# zsh -c 'export PS1="%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
-# )
-# %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%} ▶ "'
+# Cowsay
+fortune -e | cowsay -w -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
+echo ''
 
-# Background > #173448
-cowsay "$(fortune)"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/zeebu/.oh-my-zsh
 export TERM="xterm-256color"
@@ -93,7 +91,7 @@ export PATH="$HOME/arc/arcanist/bin:$PATH"
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-#export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
+export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -108,5 +106,6 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Useful while enabling/disabling touchpad
 export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
 
