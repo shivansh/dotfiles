@@ -83,7 +83,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
-Plug 'walm/jshint.vim'                   " JavaScript syntax checking
+Plug 'pangloss/vim-javascript'            " JavaScript syntax checking
 Plug 'Shougo/neocomplcache.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'townk/vim-autoclose'
@@ -107,6 +107,10 @@ Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
 Plug 'leafgarland/typescript-vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'kshenoy/vim-signature'             " Show markers
+Plug 'taglist.vim'                       " Source code browser
+Plug 'octol/vim-cpp-enhanced-highlight'  " C++ syntax
+
+" Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
 " Plug 'burnettk/vim-angular'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
@@ -114,7 +118,6 @@ Plug 'kshenoy/vim-signature'             " Show markers
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'
-" Plug 'pangloss/vim-javascript'
 " Plug 'ensime/ensime-vim'
 " Plug 'klen/python-mode'
 " Plug 'lokaltog/vim-powerline'
@@ -122,7 +125,6 @@ Plug 'kshenoy/vim-signature'             " Show markers
 " Plug 'dscleaver/sbt-quickfix'
 " Plug 'xolox/vim-notes'
 " Plug 'tomasr/molokai'
-" Plug 'OmniCppComplete'
 " let g:molokai_original = 1
 " let g:rehash256 = 1
 call plug#end()
@@ -135,6 +137,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -143,13 +146,23 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " autocmd FileType json set foldmethod=syntax
 
+" autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" Typescript
+let g:syntastic_typescript_checks=['tsc', 'tslint']
+let g:syntastic_typescript_tsc_fname = ''
+
+" Javascript
+let g:javascript_plugin_jsdoc = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Indentation
+" >> Indentation and Indentlines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:indent_guides_auto_colors=1
-" let g:indent_guides_start_level=4
-" let g:indent_guides_guide_size=0
+let g:indent_guides_auto_colors=1
+let g:indent_guides_start_level=4
+let g:indent_guides_guide_size=0
 let g:indentLine_enabled = 0
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
