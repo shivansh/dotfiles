@@ -1,7 +1,3 @@
-# Cowsay
-fortune -e | cowsay -w -f $(ls /usr/share/cowsay/cows/ | shuf -n1)
-echo ''
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/zeebu/.oh-my-zsh
 export TERM="xterm-256color"
@@ -10,7 +6,7 @@ export GPG_TTY=$(tty)
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -108,4 +104,4 @@ fi
 
 # Useful while enabling/disabling touchpad
 export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
-
+. /home/zeebu/cpm/cow_selector
