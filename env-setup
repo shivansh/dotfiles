@@ -12,14 +12,14 @@ if [ $? -ne 0 ]; then
 
 else
   echo 'Found zsh!! Backing up...'
-  for rc_file in ${rc_list[@]}; do
+  for rc_file in "${rc_list[@]}"; do
     if [[ -f $rc_file || -L $rc_file ]]; then
-      mv $HOME/$rc_file $HOME/$rc_file.backup
+      mv "$HOME/$rc_file" "$HOME/$rc_file".backup
     fi
 
-    ln -s $HOME/dotfiles/$rc_file $HOME/$rc_file
+    ln -s "$HOME/dotfiles/$rc_file" "$HOME/$rc_file"
   done
 
-  source $HOME/.zshrc
+  source "$HOME"/.zshrc
   echo 'Success!!'
 fi
