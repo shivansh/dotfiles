@@ -109,6 +109,8 @@ Plug 'derekwyatt/vim-scala'
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'taglist.vim'                       " Source code browser
 Plug 'octol/vim-cpp-enhanced-highlight'  " C++ syntax
+" Plug 'rip-rip/clang_complete'            " C/C++ completion
+Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 
 " Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
@@ -155,6 +157,9 @@ let g:syntastic_typescript_tsc_fname = ''
 
 " Javascript
 let g:javascript_plugin_jsdoc = 1
+
+" C/C++
+" let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,6 +243,9 @@ map ; :
 
 " Automatic indentation
 map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
+
+" Tagbar
+nmap <F4> :TagbarToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
