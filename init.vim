@@ -109,7 +109,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'taglist.vim'                       " Source code browser
 Plug 'octol/vim-cpp-enhanced-highlight'  " C++ syntax
-" Plug 'rip-rip/clang_complete'            " C/C++ completion
+Plug 'rip-rip/clang_complete'            " C/C++ completion
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 
 " Plug 'walm/jshint.vim'
@@ -152,14 +152,14 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Typescript
-let g:syntastic_typescript_checks=['tsc', 'tslint']
-let g:syntastic_typescript_tsc_fname = ''
+" let g:syntastic_typescript_checks=['tsc', 'tslint']
+" let g:syntastic_typescript_tsc_fname = ''
 
 " Javascript
 let g:javascript_plugin_jsdoc = 1
 
 " C/C++
-" let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -236,7 +236,6 @@ map <F4> :FZF<CR>
 " NERDcommenter mapping
 nmap // <leader>ci
 " by default <leader> is mapped to \
-map <C-i> :IndentLinesToggle<CR>
 
 " Proves to be very productive
 map ; :
@@ -246,6 +245,9 @@ map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
 
 " Tagbar
 nmap <F4> :TagbarToggle<CR>
+
+nmap <C-i> :IndentLinesToggle<CR>
+nmap <C-l> :SyntasticToggleMode<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
