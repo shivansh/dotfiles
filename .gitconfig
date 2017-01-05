@@ -22,3 +22,6 @@
 [url "git@github.com:"]
   insteadOf = https://github.com/
   insteadOf = http://github.com/
+
+[gc]
+	auto = 1

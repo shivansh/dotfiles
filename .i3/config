@@ -42,7 +42,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+n exec --no-startup-id rofi -show run
 
 # Custom todo-list using rofi
-bindsym $mod+t exec --no-startup-id cat ~/ToDo/todo | rofi -dmenu
+bindsym $mod+t exec --no-startup-id cat ~/todo | rofi -dmenu
 
 # change focus
 # bindsym $mod+j focus left

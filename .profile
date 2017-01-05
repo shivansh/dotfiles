@@ -9,6 +9,7 @@
 #umask 022
 
 export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
+xmodmap ~/.xmodmap
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
