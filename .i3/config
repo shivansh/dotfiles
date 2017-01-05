@@ -38,7 +38,11 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -b -l 7 -fn 'Source Code Pro-11.5'"
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -b -l 7 -fn 'Source Code Pro-11.5'"
+bindsym $mod+n exec --no-startup-id rofi -show run
+
+# Custom todo-list using rofi
+bindsym $mod+t exec --no-startup-id cat ~/ToDo/todo | rofi -dmenu
 
 # change focus
 # bindsym $mod+j focus left
@@ -100,8 +104,8 @@ bindsym $mod+minus scratchpad show
 #workspaces defined
 set $w1 k:web
 set $w2 j:nvim
-set $w3 h:GUI
-set $w4 l:ssh
+set $w3 h:ssh
+set $w4 l:GUI
 set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
@@ -167,11 +171,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 #exec --no-startup-id export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
 
-#bindsym $mod+Shift+t exec --no-startup-id xinput set-prop `echo $touchpad` "Device Enabled" 0
-#bindsym $mod+t exec --no-startup-id xinput set-prop `echo $touchpad` "Device Enabled" 1
-
-bindsym $mod+Shift+t exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
-bindsym $mod+t exec --no-startup-id xinput set-prop 11 "Device Enabled" 1
+# bindsym $mod+Shift+t exec --no-startup-id xinput set-prop `echo $touchpad` "Device Enabled" 0
+# bindsym $mod+t exec --no-startup-id xinput set-prop `echo $touchpad` "Device Enabled" 1
 
 # set $mode_system System (h) hibernate
 # mode "$mode_system" {
