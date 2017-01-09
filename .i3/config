@@ -51,10 +51,12 @@ bindsym $mod+t exec --no-startup-id cat ~/todo | rofi -dmenu
 # bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
+bindsym $mod+0x2c focus left
 bindsym $mod+Left focus left
+bindsym $mod+0x2e focus right
+bindsym $mod+Right focus right
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 # bindsym $mod+Shift+j move left
