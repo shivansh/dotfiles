@@ -234,9 +234,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerdtree mappings
 map <F2> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-"map <C-S-l> :tabNext<CR>
-"map <C-S-h> :tabp<CR>
-"map <C-S-n> :tabnew<CR>
 
 " The awesome fzf
 map <F4> :FZF<CR>
@@ -257,16 +254,27 @@ nmap <F4> :TagbarToggle<CR>
 nmap <C-i> :IndentLinesToggle<CR>
 nmap <C-l> :SyntasticToggleMode<CR>
 
+" TODO buffer bindings
+" map <C-S-l> :tabNext<CR>
+" map <C-S-h> :tabp<CR>
+" map <C-S-n> :tabnew<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <C-Left> b TODO >> fix key-bindings in normal mode
-" map <C-Right> w
-
 " Bash like keys
-cmap <C-a> <Home>
-cmap <C-e> <End>
+nmap <C-A> <Home>
+imap <C-A> <Home>
+nmap <C-E> <End>
+imap <C-E> <End>
+nmap <C-Left> b
+nmap <C-Right> w
+" Avoid arrow keys in insert mode
+imap <A-l> <Right>
+imap <A-h> <Left>
+imap <A-j> <Down>
+imap <A-k> <Up>
 
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
@@ -312,12 +320,10 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Delete trailing white-spaces on save
-func! DeleteTrailingWS()
+" Delete trailing white-spaces
+function! DeleteTrailingWS()
   %s/\s\+$//ge
-endfunc
-
-au VimLeave * DeleteTrailingWS()
+endfunction
 
 " Turn on persistent undo, which means you can undo even
 " when you close the buffers
