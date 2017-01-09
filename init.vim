@@ -16,7 +16,7 @@ set autowrite	   " Automatically save before commands like :next and :make
 " set hidden		 " Hide buffers when they are abandoned
 set mouse=a
 
-" Use this whenever <leader> is encountered
+" Use <.> whenever <leader> is encountered
 let mapleader="."
 let g:mapleader="."
 
@@ -33,13 +33,13 @@ command W w !sudo tee % > /dev/null
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The awesome autocomplete window which you see on the statusbar :)
 set wildmenu
-" set term=screen-256color
 set hlsearch
 set nu
 set rnu
 set showmatch
 set sidescroll=1
 set splitbelow
+" set term=screen-256color
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,14 +47,9 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=2
 set softtabstop=2
-set shiftwidth=2 " size of an indent
-
-" insert space(governed by the value of tabstop) instead of tab
-set expandtab
-
-" make tab insert indents instead of tabs at the beginning of a line
-set smarttab
-
+set shiftwidth=2     " size of an indent
+set expandtab        " insert space(governed by the value of tabstop) instead of tab
+set smarttab         " make tab insert indents instead of tabs at the beginning of a line
 set copyindent
 set autoindent
 set smartindent
@@ -79,39 +74,42 @@ set directory^=~/.vim/temp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'yggdroot/indentline'
-Plug 'pangloss/vim-javascript'            " JavaScript syntax checking
+Plug 'pangloss/vim-javascript'
+Plug 'derekwyatt/vim-scala'
+Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/syntastic'
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+Plug 'anyakichi/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'xolox/vim-misc'
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/neocomplcache.vim'
+Plug 'mhinz/vim-startify'
 Plug 'flazz/vim-colorschemes'
 Plug 'townk/vim-autoclose'
 Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'edsono/vim-matchit'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/camelcasemotion'
-Plug 'ervandew/supertab'
-Plug 'anyakichi/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
-Plug 'xolox/vim-misc'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/syntastic'
-Plug 'mhinz/vim-startify'
-Plug 'sirver/ultisnips'
 Plug 'davidhalter/jedi-vim'
 Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
-Plug 'leafgarland/typescript-vim'
-Plug 'derekwyatt/vim-scala'
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'taglist.vim'                       " Source code browser
-Plug 'octol/vim-cpp-enhanced-highlight'  " C++ syntax
-Plug 'rip-rip/clang_complete'            " C/C++ completion
+
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'yggdroot/indentline'
+Plug 'ervandew/supertab'
+Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 
+" Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
 " Plug 'burnettk/vim-angular'
@@ -148,18 +146,26 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " autocmd FileType json set foldmethod=syntax
 
-" autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+autocmd QuickFixCmdPost [^l]* nested cwindow
 
 " Typescript
-" let g:syntastic_typescript_checks=['tsc', 'tslint']
-" let g:syntastic_typescript_tsc_fname = ''
+let g:syntastic_typescript_checks=['tsc']
+" Make the compiler search for the tsconfig.json file starting in
+" the current directory and continuing up the parent directory chain.
+let g:syntastic_typescript_tsc_fname = ''
+" let g:syntastic_typescript_checkers = []
+
+" autocmd FileType typescript :set makeprg=tsc
+" let g:typescript_compiler_binary = 'tsc'
+" let g:typescript_compiler_options = ''
 
 " Javascript
 let g:javascript_plugin_jsdoc = 1
 
 " C/C++
-let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+" let g:clang_library_path='/usr/lib/llvm-3.4/lib'
+" let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +184,8 @@ augroup json_autocmd
   autocmd FileType json set noexpandtab
   filetype plugin indent on
 augroup END
+
+au BufRead,BufNewFile *.pkt set filetype=packetdrill
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""

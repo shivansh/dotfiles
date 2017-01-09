@@ -1,14 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+set -e
 # Place all the required rc files here
-rc_list=(".vimrc" ".bashrc" ".zshrc" ".zsh_aliases" ".conkyrc"
-         ".xinitrc" ".xsession" ".xmodmap");
+rc_list=(".vimrc" ".bashrc" ".zshrc" ".zsh_aliases"
+         ".conkyrc" ".xinitrc" ".xsession" ".xmodmap");
 
 # Check if zsh is already installed
 apt-cache policy zsh | grep 'Installed' &> /dev/null
 
-if [ $? -ne 0 ]; then
+if [[ $? -ne 0 ]]; then
   echo 'zsh is not installed!! Please install it first.'
+  exit 1
 
 else
   echo 'Found zsh!! Backing up...'
@@ -21,5 +23,5 @@ else
   done
 
   source "$HOME"/.zshrc
-  echo 'Success!!'
+  echo 'Setup successful !'
 fi
