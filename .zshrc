@@ -60,7 +60,7 @@ set -o ignoreeof
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent)
+plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent web-search sudo ssh-agent)
 
 # User configuration
 

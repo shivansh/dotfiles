@@ -169,7 +169,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Indentation and Indentlines
+" >> Indentation, Indentline and Cursorline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_auto_colors=1
 let g:indent_guides_start_level=4
@@ -185,8 +185,13 @@ augroup json_autocmd
   filetype plugin indent on
 augroup END
 
-au BufRead,BufNewFile *.pkt set filetype=packetdrill
+" Display cursorline in normal mode
+au VimEnter * set cursorline!
+au InsertEnter,InsertLeave * set cursorline!
 
+" if has('nvim')
+"   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+" endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Autocomplete
@@ -275,6 +280,8 @@ imap <A-l> <Right>
 imap <A-h> <Left>
 imap <A-j> <Down>
 imap <A-k> <Up>
+
+au BufRead,BufNewFile *.pkt set filetype=packetdrill
 
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
