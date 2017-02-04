@@ -10,6 +10,11 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
                                                    /____/
 ```
 
+On any normal day - <br>
+![Workspace-Selection](workspace-selection.jpg)
+
+---
+
 ## Requirements
 * neovim/vim
 * zsh
@@ -29,4 +34,4 @@ Your current configuration files (_refer next section_) will be backed up and ca
 For cherry-picking, update the list `rc_list` in `env-setup.sh` with all the configuration files that are required.
 
 ## ToDo
-* **Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.
+* ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~
