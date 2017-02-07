@@ -106,6 +106,8 @@ Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
 Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
+Plug 'tpope/vim-sleuth'
+Plug 'kien/ctrlp.vim'
 
 " Plug 'edsono/vim-matchit'
 " Plug 'vim-scripts/auto-pairs-gentle'
