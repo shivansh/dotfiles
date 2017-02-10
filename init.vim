@@ -86,7 +86,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 
-Plug 'vim-airline/vim-airline'
+Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'mhinz/vim-startify'
@@ -108,10 +108,10 @@ Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'tpope/vim-sleuth'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/auto-pairs-gentle'
 
-" Plug 'edsono/vim-matchit'
-" Plug 'vim-scripts/auto-pairs-gentle'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
+" Plug 'edsono/vim-matchit'
 " Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
 " Plug 'burnettk/vim-angular'
@@ -316,10 +316,10 @@ colorscheme peaksea
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_section_y = 'BN: %{bufnr("%")}'
-let g:airline_theme='jellybeans'
+let g:airline_theme='simple'    " Favourites: Jellybeans, wombat
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" let g:airline_section_y = 'BN: %{bufnr("%")}'
 
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
