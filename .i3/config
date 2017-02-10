@@ -65,10 +65,12 @@ bindsym $mod+Up focus up
 # bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
+bindsym $mod+Shift+0x2c move left
 bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+0x2e move right
+bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 # bindsym $mod+H split h
@@ -164,12 +166,13 @@ bindsym $mod+m move workspace to output left
 
 # hotkeys
 bindsym $mod+Tab exec google-chrome-stable
+
 bindsym Mod1+Shift+l exec i3lock -c 00ace6 -t -d
 # bindsym Mod1+Shift+l exec xscreensaver-command -lock
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -- -5%
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
+bindsym XF86MonBrightnessDown exec ../scripts/brightness -1
+bindsym XF86MonBrightnessUp exec ../scripts/brightness +1
 
 #exec --no-startup-id export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
 
@@ -216,7 +219,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command ~/conky-i3bar
+  #status_command ~/conky-i3bar
+  status_command i3status
   position top
   font xft:Source Code Pro for Powerline bold 10
 }
