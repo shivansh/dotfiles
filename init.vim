@@ -106,10 +106,10 @@ Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
 Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
-Plug 'tpope/vim-sleuth'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 
+" Plug 'tpope/vim-sleuth'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'edsono/vim-matchit'
 " Plug 'walm/jshint.vim'
@@ -316,7 +316,7 @@ colorscheme peaksea
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='simple'    " Favourites: Jellybeans, wombat
+" let g:airline_theme=''    " Favourites: Jellybeans, wombat
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " let g:airline_section_y = 'BN: %{bufnr("%")}'
@@ -344,6 +344,14 @@ endfunction
 "   set undofile
 " catch
 " endtry
+
+if has("autocmd")
+  " Highlight TODO, FIXME, NOTE, etc.
+  if v:version > 701
+    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|NOTE\|HACK\)')
+    autocmd Syntax * call matchadd('Debug', '\W\zs\(INFO\)')
+  endif
+endif
 
 " Make vim jump to the last position when reopening a file
 if has("autocmd")
