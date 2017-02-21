@@ -233,6 +233,7 @@ au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#15151
 au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 au VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+au VimEnter * call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
 au VimEnter * call NERDTreeHighlightFile('rb', 'Red', 'none', '#ffa500', '#151515')
 au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
