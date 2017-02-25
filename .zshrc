@@ -11,7 +11,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Powerline configuration variables
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context os_icon dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
