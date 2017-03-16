@@ -34,4 +34,5 @@ Your current configuration files (_refer next section_) will be backed up and ca
 For cherry-picking, update the list `rc_list` in `env-setup.sh` with all the configuration files that are required.
 
 ## ToDo
-* ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~
+* ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~ [ff6624de](https://github.com/shivrai/dotfiles/commit/ff6624debacbb7cd1b467f74f1c534c616164df9)
+* Modularize vim plugin configs
