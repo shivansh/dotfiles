@@ -106,15 +106,15 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #workspaces defined
-set $w1 k:web
-set $w2 j:nvim
-set $w3 h:ssh
+set $w1 k:🕸web
+set $w2 j:💻nvim
+set $w3 h:⇄ssh
 set $w4 l:GUI
-set $w5 u:irc
+set $w5 u:📩irc
 set $w6 i:ide
 set $w7 o:vm
-set $w8 p:media
-set $w9 m:slides
+set $w8 p:🎧media
+set $w9 m:📃slides
 
 # switch to workspace
 bindsym $mod+k workspace $w1
