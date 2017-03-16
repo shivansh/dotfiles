@@ -21,6 +21,7 @@ On any normal day - <br>
 * [oh-my-zsh](http://ohmyz.sh/)
 * [Powerline fonts](https://github.com/powerline/fonts#powerline-fonts)
 * [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
+* CTags
 
 ## Installation
 The installation script is brief:
