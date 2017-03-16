@@ -11,7 +11,7 @@ _  /   / /__      / /___  / /_/ /  / / /  __/ _  / _  /_/ /_(__  )
 ```
 
 On any normal day - <br>
-![Workspace-Selection](workspace-selection.jpg)
+![Workspace-Selection](workspace-selection.png)
 
 ---
 
