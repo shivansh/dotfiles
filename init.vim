@@ -138,7 +138,7 @@ call plug#end()
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+" let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -336,15 +336,13 @@ colorscheme peaksea
 " >> Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:airline_theme=''    " Favourites: Jellybeans, wombat
+let g:airline_powerline_fonts = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-" let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_skip_empty_sections = 1   " Disable empty section
+let g:airline_section_warning = 0       " Disable warning section
+let g:airline_section_error = 0         " Disable error section
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" Always show statusline
 set laststatus=2
 
 
