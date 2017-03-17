@@ -1,7 +1,6 @@
 [user]
 	name = Shivansh Rai
 	email = shivansh@freebsd.org
-	signingkey = BDF08F0B
 
 [core]
 	editor = nvim

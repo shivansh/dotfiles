@@ -1,3 +1,6 @@
+set encoding=utf-8     " The encoding displayed
+set fileencoding=utf-8 " The encoding written to file
+
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
@@ -104,12 +107,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
-Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 
 " Plug 'tpope/vim-sleuth'
+" Plug 'sirver/ultisnips'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'edsono/vim-matchit'
 " Plug 'walm/jshint.vim'

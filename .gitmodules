@@ -1,3 +1,0 @@
-[submodule "zsh-themes/powerlevel9k"]
-	path = zsh-themes/powerlevel9k
-	url = git@github.com:shivrai/powerlevel9k.git

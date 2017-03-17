@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/zeebu/.oh-my-zsh
+export ZSH=/home/zeebsd/.oh-my-zsh
 export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="bira"
 
 # Load powerline configuration variables
 source $HOME/my-config-files/powerlevel9k-setup
@@ -68,7 +68,7 @@ plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebu/my-config-files/scripts"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebsd/my-config-files/scripts"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/my-config-files/sh-utilities
@@ -105,7 +105,3 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Useful while enabling/disabling touchpad
-export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
-. /home/zeebu/cpm/cow_selector
