@@ -21,7 +21,8 @@ On any normal day - <br>
 * [oh-my-zsh](http://ohmyz.sh/)
 * [Powerline fonts](https://github.com/powerline/fonts#powerline-fonts)
 * [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
-* CTags
+* exuberant ctags **(optional)**
+* cscope **(optional)**
 
 ## Installation
 The installation script is brief:
@@ -32,7 +33,7 @@ git clone https://github.com/shivrai/dotfiles.git ~/dotfiles
 Your current configuration files (_refer next section_) will be backed up and can be referenced later by `*.backup`.
 
 ### Custom installation
-For cherry-picking, update the list `rc_list` in `env-setup.sh` with all the configuration files that are required.
+For cherry-picking, update the list `rc_list` in `env-setup` with all the configuration files that are required.
 
 ## ToDo
 * ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~ [ff6624de](https://github.com/shivrai/dotfiles/commit/ff6624debacbb7cd1b467f74f1c534c616164df9)
