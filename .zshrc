@@ -8,11 +8,8 @@ export GPG_TTY=$(tty)
 # time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Powerline configuration variables
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
+# Load powerline configuration variables
+source $HOME/my-config-files/powerlevel9k-setup
 
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
@@ -72,7 +69,6 @@ plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebu/my-config-files/scripts"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
