@@ -71,6 +71,7 @@ plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebu/my-config-files/scripts"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/my-config-files/sh-utilities
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
