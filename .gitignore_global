@@ -1,3 +1,4 @@
 tags
 cscope.files
 cscope.out
+*.o
