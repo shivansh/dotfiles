@@ -88,7 +88,6 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/neocomplcache.vim'
 Plug 'mhinz/vim-startify'
 Plug 'flazz/vim-colorschemes'
 Plug 'townk/vim-autoclose'
@@ -104,12 +103,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
 Plug 'ervandew/supertab'
-Plug 'sirver/ultisnips'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-sleuth'
 
-" Plug 'tpope/vim-sleuth'
+" Plug 'sirver/ultisnips'
+" Plug 'Shougo/neocomplcache.vim'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'edsono/vim-matchit'
 " Plug 'walm/jshint.vim'
@@ -117,7 +118,6 @@ Plug 'vim-scripts/auto-pairs-gentle'
 " Plug 'burnettk/vim-angular'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 " Plug 'tpope/vim-markdown'
-" Plug 'Valloric/YouCompleteMe'
 " Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'kien/rainbow_parentheses.vim'
 " Plug 'ensime/ensime-vim'
@@ -138,7 +138,7 @@ call plug#end()
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 1
 let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -151,10 +151,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
 " Typescript
-let g:syntastic_typescript_checks=['tsc', 'tslint']
+" let g:syntastic_typescript_checks=['tsc', 'tslint']
 " Make the compiler search for the tsconfig.json file starting in
 " the current directory and continuing up the parent directory chain.
-let g:syntastic_typescript_tsc_fname = ''
+" let g:syntastic_typescript_tsc_fname = ''
 " let g:syntastic_typescript_checkers = []
 
 " autocmd FileType typescript :set makeprg=tsc
@@ -171,8 +171,9 @@ let g:javascript_plugin_jsdoc = 1
 
 " Assembly
 " let g:syntastic_asm_compiler = 'mipsel-linux-gcc'
-let g:syntastic_asm_checkers = []
+" let g:syntastic_asm_checkers = []
 
+let g:ycm_show_diagnostics_ui = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Indentation, Indentline and Cursorline
@@ -202,12 +203,13 @@ au InsertEnter,InsertLeave * set cursorline!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
+" let g:neocomplcache_enable_smart_case = 1
 " AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
+" let g:neocomplcache_enable_auto_select = 1
 " Enable omni completion.
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -352,6 +354,7 @@ let g:airline_section_warning = 0       " Disable warning section
 let g:airline_section_error = 0         " Disable error section
 
 set laststatus=2
+set noshowmode                          " Disable default statusline
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
