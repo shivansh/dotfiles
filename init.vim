@@ -102,16 +102,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
-Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
+Plug 'ervandew/supertab'
 
 " Plug 'sirver/ultisnips'
-" Plug 'Shougo/neocomplcache.vim'
-" Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'edsono/vim-matchit'
 " Plug 'walm/jshint.vim'
 " Plug 'elzr/vim-json'
@@ -203,13 +201,9 @@ au InsertEnter,InsertLeave * set cursorline!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-" let g:neocomplcache_enable_smart_case = 1
-" AutoComplPop like behavior.
-" let g:neocomplcache_enable_auto_select = 1
-" Enable omni completion.
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = '/usr/bin/python'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -376,7 +370,7 @@ endfunction
 if has("autocmd")
   " Highlight TODO, FIXME, NOTE, etc.
   if v:version > 701
-    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|NOTE\|HACK\)')
+    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|NOTE\|HACK\|Note\)')
     autocmd Syntax * call matchadd('Debug', '\W\zs\(INFO\)')
   endif
 endif

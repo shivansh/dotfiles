@@ -108,4 +108,3 @@ fi
 
 # Useful while enabling/disabling touchpad
 export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
-. /home/zeebu/cpm/cow_selector
