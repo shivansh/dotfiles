@@ -79,13 +79,11 @@ Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/syntastic'
 Plug 'octol/vim-cpp-enhanced-highlight'
-
 Plug 'anyakichi/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
-
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
@@ -97,7 +95,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'taglist.vim'                       " Source code browser
-
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -109,24 +106,6 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 
-" Plug 'sirver/ultisnips'
-" Plug 'edsono/vim-matchit'
-" Plug 'walm/jshint.vim'
-" Plug 'elzr/vim-json'
-" Plug 'burnettk/vim-angular'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-" Plug 'tpope/vim-markdown'
-" Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'kien/rainbow_parentheses.vim'
-" Plug 'ensime/ensime-vim'
-" Plug 'klen/python-mode'
-" Plug 'lokaltog/vim-powerline'
-" Plug 'megaannum/vimside'
-" Plug 'dscleaver/sbt-quickfix'
-" Plug 'xolox/vim-notes'
-" Plug 'tomasr/molokai'
-" let g:molokai_original = 1
-" let g:rehash256 = 1
 call plug#end()
 
 
