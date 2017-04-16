@@ -72,302 +72,54 @@ set directory^=~/.vim/temp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
-
-Plug 'pangloss/vim-javascript'
-Plug 'derekwyatt/vim-scala'
-Plug 'leafgarland/typescript-vim'
-Plug 'scrooloose/syntastic'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'anyakichi/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
-Plug 'xolox/vim-misc'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-startify'
-Plug 'flazz/vim-colorschemes'
-Plug 'townk/vim-autoclose'
-Plug 'vim-scripts/HTML-AutoCloseTag'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'davidhalter/jedi-vim'
-Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
-Plug 'kshenoy/vim-signature'             " Show markers
-Plug 'taglist.vim'                       " Source code browser
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'yggdroot/indentline'
-Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
-Plug 'kien/ctrlp.vim'
-Plug 'vim-scripts/auto-pairs-gentle'
-Plug 'Valloric/YouCompleteMe'
-Plug 'tpope/vim-sleuth'
-Plug 'ervandew/supertab'
-Plug 'eagletmt/neco-ghc'
-
-
-call plug#end()
-
+source $HOME/my-config-files/vimfiles/plugins.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Syntax checking and auto-complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" autocmd FileType json set foldmethod=syntax
-
-autocmd QuickFixCmdPost [^l]* nested cwindow
-
-" Typescript
-" let g:syntastic_typescript_checks=['tsc', 'tslint']
-" Make the compiler search for the tsconfig.json file starting in
-" the current directory and continuing up the parent directory chain.
-" let g:syntastic_typescript_tsc_fname = ''
-" let g:syntastic_typescript_checkers = []
-
-" autocmd FileType typescript :set makeprg=tsc
-" let g:typescript_compiler_binary = 'tsc'
-" let g:typescript_compiler_options = ''
-
-" Javascript
-let g:javascript_plugin_jsdoc = 1
-
-" C/C++
-" let g:clang_library_path='/usr/lib/llvm-3.4/lib'
-" let g:syntastic_cpp_compiler = 'clang++'
-" let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
-
-" Assembly
-" let g:syntastic_asm_compiler = 'mipsel-linux-gcc'
-" let g:syntastic_asm_checkers = []
-
-let g:ycm_show_diagnostics_ui = 0
+source $HOME/my-config-files/vimfiles/syntax.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Indentation, Indentline and Cursorline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indent_guides_auto_colors=1
-let g:indent_guides_start_level=4
-let g:indent_guides_guide_size=0
-let g:indentLine_enabled = 0
-au! BufRead,BufNewFile *.json set filetype=json
-augroup json_autocmd
-  autocmd!
-  autocmd FileType json set autoindent
-  autocmd FileType json set formatoptions=tcq2l
-  autocmd FileType json set textwidth=78 shiftwidth=2
-  autocmd FileType json set noexpandtab
-  filetype plugin indent on
-augroup END
-
-" Display cursorline in normal mode
-au VimEnter * set cursorline!
-au InsertEnter,InsertLeave * set cursorline!
-
-" if has('nvim')
-"   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-" endif
+source $HOME/my-config-files/vimfiles/indent.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/usr/bin/python'
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-
+source $HOME/my-config-files/vimfiles/autocompletion.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> NerdTree configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocmd vimenter * NERDTree << uncomment to toggle automatically
-
-" NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-au VimEnter * call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-au VimEnter * call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-au VimEnter * call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-au VimEnter * call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-au VimEnter * call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-au VimEnter * call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-au VimEnter * call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-au VimEnter * call NERDTreeHighlightFile('ts', 'Red', 'none', '#ffa500', '#151515')
-au VimEnter * call NERDTreeHighlightFile('rb', 'Red', 'none', '#ffa500', '#151515')
-au VimEnter * call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
-" Close vim if nerdtree is the only open tab
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
+source $HOME/my-config-files/vimfiles/nerdtree.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> NerdCommenter configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+source $HOME/my-config-files/vimfiles/nerdcommenter.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Nerdtree mappings
-map <F2> :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-
-" The awesome fzf
-map <F4> :FZF<CR>
-
-" NERDcommenter mapping
-nmap // <leader>ci
-" by default <leader> is mapped to \
-
-" Proves to be very productive
-map ; :
-
-" Automatic indentation
-map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
-
-" Tagbar
-nmap  <F4> :TagbarToggle<CR>
-nmap <C-i> :IndentLinesToggle<CR>
-nmap <C-l> :SyntasticToggleMode<CR>
-
-" TODO buffer bindings
-" map <C-S-l> :tabNext<CR>
-" map <C-S-h> :tabp<CR>
-" map <C-S-n> :tabnew<CR>
-
+source $HOME/my-config-files/vimfiles/mappings.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bash like keys
-nmap <C-A> <Home>
-imap <C-A> <Home>
-nmap <C-E> <End>
-imap <C-E> <End>
-nmap <C-Left> b
-nmap <C-Right> w
-" Avoid arrow keys in insert mode
-imap <A-l> <Right>
-imap <A-h> <Left>
-imap <A-j> <Down>
-imap <A-k> <Up>
-
-au BufRead,BufNewFile *.pkt set filetype=packetdrill
-
-" Cscope configuration
-source ~/.vim/plugged/cscope_maps.vim
-nmap <A-l> <C-\>s
-
-" CTags configuration
-set tags=./tags;$HOME     " Look for tags traversing upwards until $HOME
-nmap <A-j> <C-]>
-nmap <A-k> <C-t>
-
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
-" the call to :runtime you can find below.  If you wish to change any of those
-" settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
-" will be overwritten everytime an upgrade of the vim packages is performed.
-" It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
-
-" Uncomment the next line to make Vim more Vi-compatible
-" NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
-" options, so any other options should be set AFTER setting 'compatible'.
-" set compatible
-
+source $HOME/my-config-files/vimfiles/navigation.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Colors and fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax highlighting by default.
-syntax enable
-" Colorscheme
-set background=dark
-colorscheme peaksea
-" Favourites > desert256v2 Candypaper 256-jungle molokai jellybeans
-
+source $HOME/my-config-files/vimfiles/colors.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:airline_theme=''    " Favourites: Jellybeans, wombat
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_skip_empty_sections = 1   " Disable empty section
-let g:airline_section_warning = 0       " Disable warning section
-let g:airline_section_error = 0         " Disable error section
-
-set laststatus=2
-set noshowmode                          " Disable default statusline
-
+source $HOME/my-config-files/vimfiles/statusline.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Delete trailing white-spaces
-function! DeleteTrailingWS()
-  %s/\s\+$//ge
-endfunction
-
-" Turn on persistent undo, which means you can undo even
-" when you close the buffers
-" try
-"   set undodir=~/.vim/temp/undodir
-"   set undofile
-" catch
-" endtry
-
-if has("autocmd")
-  " Highlight TODO, FIXME, NOTE, etc.
-  if v:version > 701
-    autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|NOTE\|HACK\|Note\)')
-    autocmd Syntax * call matchadd('Debug', '\W\zs\(INFO\)')
-  endif
-endif
-
-" Make vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" Loading indentation rules and plugins according to the filetype
-if has("autocmd")
-  filetype plugin indent on
-endif
-
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+source $HOME/my-config-files/vimfiles/helpers.vim
