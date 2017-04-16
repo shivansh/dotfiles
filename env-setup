@@ -22,6 +22,6 @@ else
     ln -s "$HOME/dotfiles/$rc_file" "$HOME/$rc_file"
   done
 
-  source "$HOME"/.zshrc
+  source "$HOME/.zshrc"
   echo 'Setup successful !'
 fi

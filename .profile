@@ -25,3 +25,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export PATH=$PATH:~/git-2.9.0/
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
