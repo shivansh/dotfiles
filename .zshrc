@@ -87,6 +87,9 @@ source $HOME/my-config-files/sh-utilities
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PATH="$HOME/arc/arcanist/bin:$PATH"
+export HISTSIZE=20000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoreboth
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

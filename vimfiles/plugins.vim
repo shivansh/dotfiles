@@ -32,9 +32,9 @@ Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'Valloric/YouCompleteMe'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 Plug 'eagletmt/neco-ghc'
-
+Plug 'lervag/vimtex'
 
 call plug#end()
