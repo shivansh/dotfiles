@@ -64,7 +64,7 @@ set -o ignoreeof
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract node npm colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent web-search sudo ssh-agent)
+plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent sudo ssh-agent)
 
 # User configuration
 
@@ -112,5 +112,5 @@ fi
 # Useful while enabling/disabling touchpad
 export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
