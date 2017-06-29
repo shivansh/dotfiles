@@ -6,14 +6,21 @@ die(){
 }
 
 # Check for root priviledges
-[ "$(id -u)" != "0" ] && {
+[[ "$(id -u)" != "0" ]] && {
   sudo "$0" "$@"
   exit $?
 }
 
-[ $# -ne 1 ] && die "USAGE: brightness <integer>"
-
 brightness_directory="/sys/class/backlight/intel_backlight"
+current_brightness=$(cat $brightness_directory/brightness)
+
+if [[ $# -eq 0 ]]; then
+  echo "$current_brightness" && exit
+elif [[ $1 == '=' && $# -ne 2 ]]; then
+  die "USAGE: brightness = <integer>"
+elif [[ $# -ne 0 && $# -ne 1 ]]; then
+  die "USAGE: brightness <integer>"
+fi
 
 ##########################
 ## Compatibility checks ##
@@ -27,13 +34,18 @@ brightness_directory="/sys/class/backlight/intel_backlight"
 #   die "Can't determine backlight controller"
 # fi
 
-current_brightness=$(cat $brightness_directory/brightness)
 max_brightness=$(cat $brightness_directory/max_brightness)
-brightness=$1
-brightness=$((current_brightness + brightness))
 
-if [[ $brightness -lt 0 ]]; then
-  brightness=0
+if [[ "$1" == "=" ]]; then
+  brightness=$2
+else
+  brightness=$1
+  brightness=$((current_brightness + brightness))
+fi
+
+# 1 <= $brightness <= $max_brightness
+if [[ $brightness -lt 0 ]] || [[ $brightness -eq 0 ]]; then
+  brightness=1
 elif [[ $brightness -gt $max_brightness ]]; then
   brightness=$max_brightness
 fi
