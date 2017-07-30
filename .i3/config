@@ -154,7 +154,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 for_window [title="Battery Warning"] sticky enable
 
 # next/previous workspace
-bindsym $ALT+$TAB workspace prev
+bindsym Mod1+Tab workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -190,7 +190,7 @@ bindsym XF86MonBrightnessUp exec ../scripts/brightness +1
 # bindsym $mod+Shift+End exec pm-hibernate
 # autostart
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/Pictures/desktop-wallpapaer-8.png
+exec --no-startup-id feh --bg-fill ~/Pictures/desktop-wallpaper-1.png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
