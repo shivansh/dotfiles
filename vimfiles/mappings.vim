@@ -27,3 +27,4 @@ nmap <C-l> :SyntasticToggleMode<CR>
 " map <C-S-l> :tabNext<CR>
 " map <C-S-h> :tabp<CR>
 " map <C-S-n> :tabnew<CR>
+map <C-W> <C-W><C-W>
