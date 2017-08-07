@@ -12,9 +12,10 @@ set ignorecase
 set showcmd
 set incsearch
 set autoread     " Dynamically update log files
-set autowrite	   " Automatically save before commands like :next and :make
-" set hidden		 " Hide buffers when they are abandoned
+set autowrite	 " Automatically save before commands like :next and :make
+" set hidden	 " Hide buffers when they are abandoned
 set mouse=a
+set colorcolumn=80
 
 " Use <.> whenever <leader> is encountered
 let mapleader="."
@@ -45,11 +46,12 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2     " size of an indent
-set expandtab        " insert space(governed by the value of tabstop) instead of tab
-set smarttab         " make tab insert indents instead of tabs at the beginning of a line
+" set tabstop=2
+" set softtabstop=2
+" set shiftwidth=2     " size of an indent
+" set expandtab        " insert space (governed by tabstop) instead of tab
+" set noexpandtab
+" set smarttab         " make tab insert indents instead of tabs
 set copyindent
 set autoindent
 set smartindent
@@ -123,3 +125,12 @@ source $HOME/my-config-files/vimfiles/statusline.vim
 " Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/my-config-files/vimfiles/helpers.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" >> Vim Markdown configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source $HOME/my-config-files/vimfiles/markdown.vim
+
+" Highlighting the ColorColumn seems to work only after the entire buffer is
+" loaded and sourcing is complete.
+highlight ColorColumn ctermbg=15
