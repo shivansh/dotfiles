@@ -21,10 +21,10 @@ map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
 " Tagbar
 nmap  <F4> :TagbarToggle<CR>
 nmap <C-i> :IndentLinesToggle<CR>
-nmap <C-l> :SyntasticToggleMode<CR>
 
 " TODO buffer bindings
 " map <C-S-l> :tabNext<CR>
 " map <C-S-h> :tabp<CR>
 " map <C-S-n> :tabnew<CR>
 map <C-W> <C-W><C-W>
+map <C-u> :set colorcolumn=80<CR>:hi ColorColumn ctermbg=15<CR>

@@ -21,9 +21,8 @@ Plug 'townk/vim-autoclose'
 Plug 'vim-scripts/HTML-AutoCloseTag'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'davidhalter/jedi-vim'
-Plug 'bronson/vim-trailing-whitespace'   " Show trailing whitespace
+Plug 'ntpeters/vim-better-whitespace'    " Show trailing whitespace
 Plug 'kshenoy/vim-signature'             " Show markers
-Plug 'taglist.vim'                       " Source code browser
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -32,9 +31,13 @@ Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'Valloric/YouCompleteMe'
-" Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 Plug 'eagletmt/neco-ghc'
 Plug 'lervag/vimtex'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Plug 'xolox/vim-easytags'
+" Plug 'taglist.vim'                       " Source code browser
 
 call plug#end()

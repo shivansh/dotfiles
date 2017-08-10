@@ -15,7 +15,7 @@ set autoread     " Dynamically update log files
 set autowrite	 " Automatically save before commands like :next and :make
 " set hidden	 " Hide buffers when they are abandoned
 set mouse=a
-set colorcolumn=80
+" set colorcolumn=80
 
 " Use <.> whenever <leader> is encountered
 let mapleader="."
@@ -133,4 +133,4 @@ source $HOME/my-config-files/vimfiles/markdown.vim
 
 " Highlighting the ColorColumn seems to work only after the entire buffer is
 " loaded and sourcing is complete.
-highlight ColorColumn ctermbg=15
+" highlight ColorColumn ctermbg=15
