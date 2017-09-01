@@ -68,7 +68,7 @@ plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlight
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/my-config-files/scripts"
+export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/my-config-files/scripts"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/my-config-files/sh-utilities
