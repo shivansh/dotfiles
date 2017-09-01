@@ -1,0 +1,3 @@
+#!/bin/bash
+
+touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''` && xinput set-prop `echo $touchpad` "Device Enabled" 0

@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/zeebu/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export TERM="xterm-256color"
 export GPG_TTY=$(tty)
 # Set name of the theme to load.
@@ -68,20 +68,13 @@ plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlight
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/zeebu/my-config-files/scripts"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/my-config-files/scripts"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/my-config-files/sh-utilities
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Some programs use VISUAL instead of EDITOR
 export VISUAL=nvim
@@ -101,16 +94,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-
 # Load aliases
-if [ -f ~/.zsh_aliases ]; then
-  source ~/.zsh_aliases
-fi
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Useful while enabling/disabling touchpad
-export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
