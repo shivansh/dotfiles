@@ -36,3 +36,7 @@ endif
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
+
+" Default skeleton for C++ files
+au BufNewFile *.cpp 0r ~/my-config-files/vimfiles/skeleton/skeleton.cpp
+au BufNewFile *.c 0r ~/my-config-files/vimfiles/skeleton/skeleton.c
