@@ -48,13 +48,13 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set tabstop=2
 " set softtabstop=2
-" set shiftwidth=2     " size of an indent
+" set shiftwidth=4     " size of an indent
 " set expandtab        " insert space (governed by tabstop) instead of tab
 " set noexpandtab
 " set smarttab         " make tab insert indents instead of tabs
 set copyindent
 set autoindent
-set smartindent
+" set smartindent
 set smartcase
 set ignorecase
 set wrap

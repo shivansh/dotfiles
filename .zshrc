@@ -98,3 +98,5 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin

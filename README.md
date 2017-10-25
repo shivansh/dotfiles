@@ -37,4 +37,4 @@ For cherry-picking, update the list `rc_list` in `env-setup` with all the config
 
 ## ToDo
 * ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~ [ff6624de](https://github.com/shivrai/dotfiles/commit/ff6624debacbb7cd1b467f74f1c534c616164df9)
-* Modularize vim plugin configs
+* ~~Modularize vim plugin configs~~ [72f0420](https://github.com/shivrai/dotfiles/commit/72f0420303ba491c149ffe5f3d4bd81898467d3c)

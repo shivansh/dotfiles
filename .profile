@@ -26,3 +26,5 @@ fi
 
 export PATH=$PATH:~/git-2.9.0/
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
