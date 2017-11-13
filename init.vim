@@ -39,6 +39,7 @@ set nu
 set rnu
 set showmatch
 set sidescroll=1
+set ttyfast
 set splitbelow
 " set term=screen-256color
 
