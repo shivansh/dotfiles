@@ -48,11 +48,11 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2     " size of an indent
-set expandtab        " insert space(governed by the value of tabstop) instead of tab
-set smarttab         " make tab insert indents instead of tabs at the beginning of a line
+set tabstop=8
+" set softtabstop=2
+" set shiftwidth=2     " size of an indent
+" set expandtab        " insert space(governed by the value of tabstop) instead of tab
+" set smarttab         " make tab insert indents instead of tabs at the beginning of a line
 set copyindent
 set autoindent
 set smartindent
@@ -77,6 +77,7 @@ set directory^=~/.vim/temp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+Plug 'junegunn/goyo.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
@@ -110,8 +111,8 @@ Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar'                 " Show tags ordered by scope
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/auto-pairs-gentle'
-
 " Plug 'tpope/vim-sleuth'
+
 " Plug 'sirver/ultisnips'
 " Plug 'rip-rip/clang_complete'          " C/C++ completion
 " Plug 'edsono/vim-matchit'
@@ -140,8 +141,8 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -170,7 +171,7 @@ let g:javascript_plugin_jsdoc = 1
 " C/C++
 " let g:clang_library_path='/usr/lib/llvm-3.4/lib'
 " let g:syntastic_cpp_compiler = 'clang++'
-" let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 " Assembly
 " let g:syntastic_asm_compiler = 'mipsel-linux-gcc'
@@ -290,6 +291,7 @@ nmap <C-l> :SyntasticToggleMode<CR>
 " map <C-S-l> :tabNext<CR>
 " map <C-S-h> :tabp<CR>
 " map <C-S-n> :tabnew<CR>
+map <C-W> <C-W><C-W>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -318,6 +320,9 @@ nmap <A-l> <C-\>s
 set tags=./tags;$HOME     " Look for tags traversing upwards until $HOME
 nmap <A-j> <C-]>
 nmap <A-k> <C-t>
+
+" Colorcolumn for demarcating 80 characters per line limit
+map <C-u> :set colorcolumn=80<CR>:hi ColorColumn ctermbg=15<CR>
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those
