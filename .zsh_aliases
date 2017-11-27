@@ -1,5 +1,8 @@
 # zsh aliases
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias ls="exa"
 alias la="exa -al"
 alias vi="vim"
