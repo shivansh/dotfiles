@@ -2,7 +2,7 @@
 
 alias ls="exa"
 alias la="exa -al"
-alias vi="vim"
+alias vi="nvim"
 alias gs="git show"
 alias gc="git commit -S"
 alias gpfom="git push -f origin master"
