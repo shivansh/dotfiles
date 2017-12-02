@@ -18,6 +18,7 @@ alias gopen="gnome-open" # an awesome file-handler
 alias dt="git difftool"
 alias rm="rm -I"
 alias zgrviewer='~/software-downloads/zgrviewer-0.10.0/run.sh'
+alias weather="curl -4 'http://wttr.in/Kanpur?m'"
 # alias z="zathura"
 # alias y="youtube-dl"
 # alias grf="git reflog"
