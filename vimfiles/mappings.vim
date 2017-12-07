@@ -27,4 +27,6 @@ nmap <C-i> :IndentLinesToggle<CR>
 " map <C-S-h> :tabp<CR>
 " map <C-S-n> :tabnew<CR>
 map <C-W> <C-W><C-W>
-map <C-u> :set colorcolumn=80<CR>:hi ColorColumn ctermbg=15<CR>
+
+" Colorcolumn for demarcating 80 characters per line limit
+nnoremap <C-u> :call ToggleColorColumn()<CR>

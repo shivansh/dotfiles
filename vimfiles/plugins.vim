@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'flazz/vim-colorschemes'
 Plug 'townk/vim-autoclose'
+Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'davidhalter/jedi-vim'
 Plug 'ntpeters/vim-better-whitespace'    " Show trailing whitespace
 Plug 'kshenoy/vim-signature'             " Show markers

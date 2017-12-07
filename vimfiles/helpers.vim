@@ -6,6 +6,16 @@ function! DeleteTrailingWS()
   %s/\s\+$//ge
 endfunction
 
+" Toggle ColorColumn on/off
+function! ToggleColorColumn()
+  if &colorcolumn == ''
+    set colorcolumn=80
+    hi ColorColumn ctermbg=15
+  else
+    set colorcolumn=
+  endif
+endfunction
+
 " Turn on persistent undo, which means you can undo even
 " when you close the buffers
 " try
