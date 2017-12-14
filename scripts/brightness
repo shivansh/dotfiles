@@ -1,6 +1,6 @@
 #!/bin/bash
 
-die(){
+die() {
   echo "$@"
   exit 1
 }
@@ -11,30 +11,25 @@ die(){
   exit $?
 }
 
-brightness_directory="/sys/class/backlight/intel_backlight"
-current_brightness=$(cat $brightness_directory/brightness)
+if [ -d /sys/class/backlight/intel_backlight ]; then
+  brightness_directory="/sys/class/backlight/intel_backlight"
+elif [ -d /sys/class/blacklight/acpi_video0 ]; then
+  brightness_directory="/sys/class/backlight/acpi_video0"
+else
+  die "Can't determine backlight controller"
+fi
+
+current_brightness=$(< $brightness_directory/brightness)
 
 if [[ $# -eq 0 ]]; then
   echo "$current_brightness" && exit
 elif [[ $1 == '=' && $# -ne 2 ]]; then
   die "USAGE: brightness = <integer>"
 elif [[ $1 != '=' && $# -ne 1 ]]; then
-  die "USAGE: brightness <integer>"
+  die "USAGE: brightness (+/-)<integer>"
 fi
 
-##########################
-## Compatibility checks ##
-##########################
-
-# if [ -d /sys/class/backlight/intel_backlight ]; then
-#   brightness_directory="/sys/class/backlight/intel_backlight"
-# elif [ -d /sys/class/blacklight/acpi_video0 ]; then
-#   brightness_directory="/sys/class/backlight/acpi_video0"
-# else
-#   die "Can't determine backlight controller"
-# fi
-
-max_brightness=$(cat $brightness_directory/max_brightness)
+max_brightness=$(< $brightness_directory/max_brightness)
 
 if [[ "$1" == "=" ]]; then
   brightness=$2
@@ -43,8 +38,8 @@ else
   brightness=$((current_brightness + brightness))
 fi
 
-# 1 <= $brightness <= $max_brightness
-if [[ $brightness -lt 0 ]] || [[ $brightness -eq 0 ]]; then
+# $brightness ∈ [1, $max_brightness]
+if [[ $brightness -lt 1 ]]; then
   brightness=1
 elif [[ $brightness -gt $max_brightness ]]; then
   brightness=$max_brightness
