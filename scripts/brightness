@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 die() {
   echo "$@"
   exit 1

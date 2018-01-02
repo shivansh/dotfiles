@@ -1,12 +1,9 @@
 #!/bin/bash
-# Update atom from downloaded deb file
+# Script for downloading and installing the latest version of atom.
 
-#TODO Safely kill current atom processes
+set -eu
 
 rm -f /tmp/atom.deb
 curl -L https://atom.io/download/deb > /tmp/atom.deb
-dpkg --install /tmp/atom.deb
-
+sudo dpkg --install /tmp/atom.deb
 apm upgrade --confirm false
-
-exit 0

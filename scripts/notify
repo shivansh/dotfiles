@@ -1,0 +1,4 @@
+#!/bin/bash
+# Script for notifying when command finishes
+
+"$@" && notify-send --icon=info Success "Job complete"
