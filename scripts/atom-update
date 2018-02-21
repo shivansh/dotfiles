@@ -3,6 +3,8 @@
 
 set -eu
 
+# TODO: Check if newer version is available before proceeding.
+
 rm -f /tmp/atom.deb
 curl -L https://atom.io/download/deb > /tmp/atom.deb
 sudo dpkg --install /tmp/atom.deb

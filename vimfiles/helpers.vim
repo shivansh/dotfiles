@@ -10,7 +10,7 @@ endfunction
 function! ToggleColorColumn()
   if &colorcolumn == ''
     set colorcolumn=80
-    hi ColorColumn ctermbg=15
+    hi ColorColumn ctermbg=4
   else
     set colorcolumn=
   endif

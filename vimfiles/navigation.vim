@@ -22,8 +22,8 @@ nmap <A-l> <C-\>s
 
 " CTags configuration
 set tags=./tags;$HOME     " Look for tags traversing upwards until $HOME
-nmap <A-j> <C-]>
-nmap <A-k> <C-t>
+noremap <A-j> <C-]>
+noremap <A-k> <C-t>
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
 " the call to :runtime you can find below.  If you wish to change any of those

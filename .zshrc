@@ -64,7 +64,7 @@ set -o ignoreeof
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlighting gpg-agent sudo ssh-agent)
+plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlighting zsh-autosuggestions gpg-agent sudo ssh-agent vi-mode)
 
 # User configuration
 
@@ -83,6 +83,7 @@ export PATH="$HOME/arc/arcanist/bin:$PATH"
 export HISTSIZE=20000
 export HISTFILESIZE=20000
 export HISTCONTROL=ignoreboth
+export LESS="$LESS --ignore-case"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

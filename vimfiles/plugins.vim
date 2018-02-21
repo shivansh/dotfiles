@@ -28,8 +28,12 @@ Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
-Plug 'eagletmt/neco-ghc'
 Plug 'plasticboy/vim-markdown'
+Plug 'fatih/vim-go'
+" Plug 'eagletmt/ghcmod-vim'
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'neovimhaskell/haskell-vim'
+" Plug 'eagletmt/neco-ghc'
 " Plug 'xolox/vim-easytags'
 " Plug 'taglist.vim'                       " Source code browser
 " Plug 'easymotion/vim-easymotion'

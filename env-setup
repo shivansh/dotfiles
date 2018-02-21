@@ -1,27 +1,90 @@
 #!/usr/bin/env bash
+# Script to replicate shell environment of @shivansh.
+# NOTE: Some segments have been adapted from "oh-my-zsh/tools/install.sh".
 
-set -e
-# Place all the required rc files here
-rc_list=(".vimrc" ".bashrc" ".zshrc" ".zsh_aliases"
-         ".conkyrc" ".xinitrc" ".xsession" ".xmodmap");
+main() {
+  # Use colors, but only if connected to a terminal, and that terminal
+  # supports them.
+  if which tput >/dev/null 2>&1; then
+    ncolors=$(tput colors)
+  fi
+  if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    NORMAL="$(tput sgr0)"
+  else
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    NORMAL=""
+  fi
 
-# Check if zsh is already installed
-apt-cache policy zsh | grep 'Installed' &> /dev/null
+  # Only enable exit-on-error after the non-critical colorization stuff,
+  # which may fail on systems lacking tput or terminfo.
+  set -euo pipefail
 
-if [[ $? -ne 0 ]]; then
-  echo 'zsh is not installed!! Please install it first.'
-  exit 1
+  # Place all the required rc files here
+  rcList=(".bashrc" ".zshrc" ".zsh_aliases" ".profile"
+          ".vimrc" ".vim"
+          ".xinitrc" ".xsession" ".xmodmap"
+          ".gitconfig" ".gitignore_global"
+          ".conkyrc" "conky-i3bar"); # TODO: fonts and .i3 ??
+  backupDir=".backup.configs" # TODO Check for naming conflicts.
 
-else
-  echo 'Found zsh!! Backing up...'
-  for rc_file in "${rc_list[@]}"; do
-    if [[ -f $rc_file || -L $rc_file ]]; then
-      mv "$HOME/$rc_file" "$HOME/$rc_file".backup
+  CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
+  if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
+    printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
+    exit 1
+  fi
+  unset CHECK_ZSH_INSTALLED
+
+  printf "${GREEN}Found zsh!!${NORMAL} Backing up...\n"
+  rm -rf "$HOME/$backupDir"
+  mkdir -p "$HOME/$backupDir"
+
+  # Check if Oh-My-Zsh exists
+  if [[ ! -d "$ZSH" ]]; then
+    printf "Installing Oh-My-Zsh\n"
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+  else
+    # If this user's login shell is not already "zsh", attempt to switch.
+    # NOTE: This check is covered by the install script in the above if block.
+    TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
+    if [[ "$TEST_CURRENT_SHELL" != "zsh" ]]; then
+      # If this platform provides a "chsh" command (not Cygwin), do it, man!
+      if hash chsh >/dev/null 2>&1; then
+        printf "${BLUE}Time to change your default shell to zsh!${NORMAL}\n"
+        chsh -s $(grep /zsh$ /etc/shells | tail -1)
+        # Else, suggest the user do so manually.
+      else
+        printf "I can't change your shell automatically because this system does not have chsh.\n"
+        printf "${BLUE}Please manually change your default shell to zsh!${NORMAL}\n"
+      fi
     fi
+  fi
 
-    ln -s "$HOME/dotfiles/$rc_file" "$HOME/$rc_file"
+  for rc in "${rcList[@]}"; do
+    if [[ -f "$rc" || -L "$rc" ]]; then
+      # Remove existing rc files after backing up.
+      # Can't trust "set -e" for something as critical as below (hah!), use "&&".
+      # http://mywiki.wooledge.org/BashFAQ/105
+      mv "$HOME/$rc" "$HOME/$backupDir" && rm -rf "$HOME/$rc"
+    fi
+    ln -sf "$(pwd)/$rc" "$HOME/$rc"
   done
 
-  source "$HOME/.zshrc"
-  echo 'Setup successful !'
-fi
+  # Setup custom zsh theme.
+  rm -rf "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" && \
+  ln -sf "$(pwd)/zsh-themes/powerlevel9k" \
+    "$HOME/.oh-my-zsh/custom/themes/powerlevel9k"
+  # Setup neovim.
+  rm -rf "$HOME/.nvimrc" && ln -sf "$(pwd)/.vimrc" "$HOME/.nvimrc"
+
+  printf "${GREEN}Setup successful!${NORMAL}\n"
+  env zsh
+}
+
+main
