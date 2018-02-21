@@ -29,10 +29,10 @@ Run the following from project root -
 ```
 ./install.sh
 ```
-Your current configuration files (_refer next section_) will be backed up and can be referenced later by `*.backup`.
+Your current configuration files (_refer next section_) will be backed up and can be found under `$HOME/.backup.configs/`.
 
 ### Custom installation
-For cherry-picking, update the list `rc_list` in `env-setup` with all the configuration files that are required.
+For cherry-picking the configuration files, update the variable `rcList` in `install.sh` accordingly.
 
 ## ToDo
 * ~~**Vim:** Fix key-bindings `<Ctrl-arrow>` in normal mode.~~ [ff6624de](https://github.com/shivrai/dotfiles/commit/ff6624debacbb7cd1b467f74f1c534c616164df9)

@@ -75,62 +75,62 @@ set directory^=~/.vim/temp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/plugins.vim
+source $HOME/dotfiles/vimfiles/plugins.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Syntax checking and auto-complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/syntax.vim
+source $HOME/dotfiles/vimfiles/syntax.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Indentation, Indentline and Cursorline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/indent.vim
+source $HOME/dotfiles/vimfiles/indent.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/autocompletion.vim
+source $HOME/dotfiles/vimfiles/autocompletion.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> NerdTree configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/nerdtree.vim
+source $HOME/dotfiles/vimfiles/nerdtree.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> NerdCommenter configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/nerdcommenter.vim
+source $HOME/dotfiles/vimfiles/nerdcommenter.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/mappings.vim
+source $HOME/dotfiles/vimfiles/mappings.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/navigation.vim
+source $HOME/dotfiles/vimfiles/navigation.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Colors and fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/colors.vim
+source $HOME/dotfiles/vimfiles/colors.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/statusline.vim
+source $HOME/dotfiles/vimfiles/statusline.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/helpers.vim
+source $HOME/dotfiles/vimfiles/helpers.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Vim Markdown configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/my-config-files/vimfiles/markdown.vim
+source $HOME/dotfiles/vimfiles/markdown.vim
 
 " Highlighting the ColorColumn seems to work only after the entire buffer is
 " loaded and sourcing is complete.

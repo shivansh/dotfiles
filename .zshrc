@@ -9,7 +9,7 @@ export GPG_TTY=$(tty)
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Load powerline configuration variables
-source $HOME/my-config-files/powerlevel9k-setup
+source $HOME/dotfiles/powerlevel9k-setup
 
 # Hotkeys
 # support for jumping words in terminal using ctrl + (left/right)
@@ -64,14 +64,14 @@ set -o ignoreeof
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract colored-man-pages autojump colorize cp zsh-syntax-highlighting zsh-autosuggestions gpg-agent sudo ssh-agent vi-mode)
+plugins=(git extract colored-man-pages autojump colorize zsh-syntax-highlighting zsh-autosuggestions gpg-agent sudo ssh-agent vi-mode)
 
 # User configuration
 
-export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/my-config-files/scripts"
+export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/dotfiles/scripts"
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/my-config-files/sh-utilities
+source $HOME/dotfiles/sh-utilities
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
