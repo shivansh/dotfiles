@@ -31,7 +31,7 @@ main() {
           ".vimrc" ".vim"
           ".xinitrc" ".xsession" ".xmodmap"
           ".gitconfig" ".gitignore_global"
-          ".conkyrc" "conky-i3bar"); # TODO: fonts and .i3 ??
+          ".conkyrc" "conky-i3bar"); # TODO: fonts/ and .i3/ ??
   backupDir=".backup.configs" # TODO Check for naming conflicts.
 
   CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)

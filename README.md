@@ -25,10 +25,9 @@ On any normal day - <br>
 * cscope **(optional)**
 
 ## Installation
-The installation script is brief:
+Run the following from project root -
 ```
-git clone https://github.com/shivrai/dotfiles.git ~/dotfiles
-./env-setup
+./install.sh
 ```
 Your current configuration files (_refer next section_) will be backed up and can be referenced later by `*.backup`.
 
