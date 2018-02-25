@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git extract colored-man-pages autojump colorize zsh-syntax-highlighting zsh-autosuggestions gpg-agent ssh-agent vi-mode)
+plugins=(git extract colored-man-pages autojump colorize zsh-syntax-highlighting gpg-agent ssh-agent sudo)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -29,3 +29,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Override aliases introduced by oh-my-zsh
 [ -r "$HOME/.aliases" ] && [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+
+# Load fzf
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"

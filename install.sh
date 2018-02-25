@@ -83,19 +83,24 @@ main() {
 
 backupAndUpdate() {
     for rc in "${rcList[@]}"; do
-        if [[ -f "$rc" || -L "$rc" ]]; then
-            # Remove existing rc files after backing up.
-            [[ -f "$HOME/$rc" ]] && mv "$HOME/$rc" "$HOME/$backupDir"
+        if [[ -f "$rc" || -L "$rc" ]] && [[ -f "$HOME/$rc" ]]; then
+            mv "$HOME/$rc" "$HOME/$backupDir"
         fi
         ln -sf "$(pwd)/$rc" "$HOME/$rc"
     done
 
     # Setup custom zsh theme.
-    rm -rf "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" && \
+    rm -rf "$HOME/.oh-my-zsh/themes/powerlevel9k" && \
         ln -sf "$(pwd)/zsh-themes/powerlevel9k" \
-        "$HOME/.oh-my-zsh/custom/themes/powerlevel9k"
+        "$HOME/.oh-my-zsh/themes/powerlevel9k"
+
     # Setup neovim.
-    rm -rf "$HOME/.nvimrc" && ln -sf "$(pwd)/.vimrc" "$HOME/.nvimrc"
+    ln -sf "$(pwd)/.vimrc" "$HOME/.nvimrc"
+
+    # Setup terminator.
+    if [[ -d "$HOME/.config/terminator" ]]; then
+        ln -sf "$(pwd)/terminator.conf" "$HOME/.config/terminator/config"
+    fi
 
     printf "${GREEN}Setup successful!${NORMAL}\n"
     env zsh

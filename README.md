@@ -13,6 +13,7 @@ Collection of all the configuration files made to ease and speed up the signific
 * [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
 * exuberant ctags **(optional)**
 * cscope **(optional)**
+* [exa](https://github.com/ogham/exa)
 
 ## Installation
 **Warning:** If you want to give these dotfiles a try, it's highly advisable to first review the code, and remove the unrequired things. Proceed at your own risk!
