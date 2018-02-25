@@ -27,11 +27,13 @@ main() {
   set -euo pipefail
 
   # Place all the required rc files here
-  rcList=(".bashrc" ".zshrc" ".zsh_aliases" ".profile"
+  rcList=(".bashrc" ".zshrc" ".profile"
+          ".aliases" ".exports" ".functions"
+          "powerlevel9k-setup"
+          ".conkyrc" "conky-i3bar"
           ".vimrc" ".vim"
-          ".xinitrc" ".xsession" ".xmodmap"
-          ".gitconfig" ".gitignore_global"
-          ".conkyrc" "conky-i3bar"); # TODO: fonts/ and .i3/ ??
+          ".xinitrc" ".xmodmap"
+          ".gitconfig" ".gitignore_global"); # TODO: fonts/ and .i3/ ??
   backupDir=".backup.configs" # TODO Check for naming conflicts.
 
   CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
@@ -69,9 +71,8 @@ main() {
   for rc in "${rcList[@]}"; do
     if [[ -f "$rc" || -L "$rc" ]]; then
       # Remove existing rc files after backing up.
-      # Can't trust "set -e" for something as critical as below (hah!), use "&&".
-      # http://mywiki.wooledge.org/BashFAQ/105
-      mv "$HOME/$rc" "$HOME/$backupDir" && rm -rf "$HOME/$rc"
+      [[ -f "$HOME/$rc" ]] && mv "$HOME/$rc" "$HOME/$backupDir"
+      rm -rf "$HOME/$rc"
     fi
     ln -sf "$(pwd)/$rc" "$HOME/$rc"
   done

@@ -2,7 +2,6 @@
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,10 +23,8 @@ let g:mapleader="."
 " Fast saving (no need to search for ! now :P)
 nmap <Leader>w :w!<CR>
 
-" Ever got permission denied error while editing ??
-" :W comes handy now
+" Ever got permission denied error while editing ?? :W comes handy now
 command W w !sudo tee % > /dev/null
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Interface
@@ -43,16 +40,15 @@ set ttyfast
 set splitbelow
 " set term=screen-256color
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set tabstop=2
 " set softtabstop=2
-" set shiftwidth=4     " size of an indent
-" set expandtab        " insert space (governed by tabstop) instead of tab
+" set shiftwidth=4 " size of an indent
+" set expandtab    " insert space (governed by tabstop) instead of tab
 " set noexpandtab
-" set smarttab         " make tab insert indents instead of tabs
+" set smarttab     " make tab insert indents instead of tabs
 set copyindent
 set autoindent
 " set smartindent
@@ -71,67 +67,18 @@ set directory^=~/.vim/temp
 " The ^= syntax for :set prepends the directory name to the head of the list,
 " so Vim will check that directory first.
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Plugins
+" >> Miscellaneous
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/plugins.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Syntax checking and auto-complete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/syntax.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Indentation, Indentline and Cursorline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/indent.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Autocomplete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/autocompletion.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> NerdTree configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/nerdtree.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> NerdCommenter configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/nerdcommenter.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/mappings.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Navigation
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/navigation.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Colors and fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/colors.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Statusline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/statusline.vim
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Helper functions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/helpers.vim
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Vim Markdown configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/dotfiles/vimfiles/markdown.vim
-
-" Highlighting the ColorColumn seems to work only after the entire buffer is
-" loaded and sourcing is complete.
-" highlight ColorColumn ctermbg=15
+source $HOME/dotfiles/vimfiles/plugins.vim        " Plugins
+source $HOME/dotfiles/vimfiles/syntax.vim         " Syntax and auto-completion
+source $HOME/dotfiles/vimfiles/indent.vim         " Indentation
+source $HOME/dotfiles/vimfiles/autocompletion.vim " Autocomplete
+source $HOME/dotfiles/vimfiles/nerdtree.vim       " NerdTree configs
+source $HOME/dotfiles/vimfiles/nerdcommenter.vim  " Nerdcommenter configs
+source $HOME/dotfiles/vimfiles/mappings.vim       " Mappings
+source $HOME/dotfiles/vimfiles/navigation.vim     " Navigation
+source $HOME/dotfiles/vimfiles/colors.vim         " Colors and fonts
+source $HOME/dotfiles/vimfiles/statusline.vim     " Statusline
+source $HOME/dotfiles/vimfiles/helpers.vim        " Helper functions
+source $HOME/dotfiles/vimfiles/markdown.vim       " Vim markdown

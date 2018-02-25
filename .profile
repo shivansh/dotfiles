@@ -8,9 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-export touchpad=`bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\''`
-xmodmap ~/.xmodmap
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -19,12 +16,20 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/arc/arcanist/bin:$HOME/dotfiles/scripts"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-export PATH=$PATH:~/git-2.9.0/
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+# Load the shell dotfiles
+
+# customize peripherals
+touchpad_id=$(bash -c $'xinput | grep "Synaptics TouchPad" | awk \'{print $6}\' | grep -o \'[0-9]*\'')
+xinput set-prop $touchpad_id "Device Enabled" 0
+unset touchpad_id
+xmodmap ~/.xmodmap
+xset r rate 200 40
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
