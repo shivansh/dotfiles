@@ -75,7 +75,7 @@ source $HOME/dotfiles/vimfiles/syntax.vim         " Syntax and auto-completion
 source $HOME/dotfiles/vimfiles/indent.vim         " Indentation
 source $HOME/dotfiles/vimfiles/autocompletion.vim " Autocomplete
 source $HOME/dotfiles/vimfiles/nerdtree.vim       " NerdTree configs
-source $HOME/dotfiles/vimfiles/nerdcommenter.vim  " Nerdcommenter configs
+source $HOME/dotfiles/vimfiles/comment.vim        " Comments
 source $HOME/dotfiles/vimfiles/mappings.vim       " Mappings
 source $HOME/dotfiles/vimfiles/navigation.vim     " Navigation
 source $HOME/dotfiles/vimfiles/colors.vim         " Colors and fonts

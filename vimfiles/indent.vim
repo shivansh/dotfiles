@@ -22,3 +22,8 @@ au InsertEnter,InsertLeave * set cursorline!
 " if has('nvim')
 "   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " endif
+
+" vim-hindent configs
+let g:hindent_on_save = 0
+let g:hindent_indent_size = 4
+let g:hindent_indent_size = 4

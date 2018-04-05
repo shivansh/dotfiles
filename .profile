@@ -15,7 +15,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/arc/arcanist/bin:$HOME/dotfiles/scripts"
+export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/.local/bin:$HOME/arc/arcanist/bin:$HOME/dotfiles/scripts"
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -28,7 +28,7 @@ fi
 touchpad_id=$(xinput | grep "Synaptics TouchPad" | sed -E 's/.*id=([0-9]*).*/\1/')
 xinput set-prop $touchpad_id "Device Enabled" 0
 xmodmap ~/.xmodmap
-xset r rate 200 40
+xset r rate 200 60
 
 # non shell-specific exports
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH

@@ -30,9 +30,12 @@ Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'danmar/cppcheck'
+
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'neovimhaskell/haskell-vim'
 " Plug 'eagletmt/neco-ghc'
 " Plug 'xolox/vim-easytags'
 " Plug 'taglist.vim'                       " Source code browser

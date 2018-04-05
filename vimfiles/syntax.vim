@@ -47,3 +47,6 @@ let g:javascript_plugin_jsdoc = 1
 " let g:syntastic_asm_checkers = []
 
 let g:ycm_show_diagnostics_ui = 0
+
+" Vim-go
+let g:go_fmt_command = "goimports"
