@@ -16,6 +16,14 @@ function! ToggleColorColumn()
   endif
 endfunction
 
+" clang-format config
+function! Formatonsave()
+  let l:formatdiff = 1
+  let l:lines="all"
+  pyf ~/dotfiles/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.cc,*.cpp,*.c call Formatonsave()
+
 " Turn on persistent undo, which means you can undo even
 " when you close the buffers
 " try

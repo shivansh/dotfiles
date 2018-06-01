@@ -33,6 +33,7 @@ main() {
             ".vimrc" ".vim"
             ".xinitrc" ".xmodmap"
             ".gitconfig" ".gitignore_global"
+            ".clang-format"
             "powerlevel9k-setup"); # TODO: fonts/ and .i3/ ??
     backupDir=".backup.configs" # TODO Check for naming conflicts.
 

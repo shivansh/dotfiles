@@ -27,3 +27,5 @@
 
 [gc]
 	auto = 1
+[http]
+	cookiefile = /home/zeebu/.gitcookies

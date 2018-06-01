@@ -33,6 +33,7 @@ Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'danmar/cppcheck'
+Plug 'rhysd/vim-clang-format'
 
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
