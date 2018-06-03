@@ -43,21 +43,16 @@ set splitbelow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Tabs, indents and cases
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set tabstop=2
-" set softtabstop=2
-" set shiftwidth=4 " size of an indent
-" set expandtab    " insert space (governed by tabstop) instead of tab
-" set noexpandtab
-" set smarttab     " make tab insert indents instead of tabs
+set shiftwidth=4   " size of an indent
 set copyindent
 set autoindent
-" set smartindent
 set smartcase
 set ignorecase
 set wrap
 set linebreak
 set textwidth=0
 set wrapmargin=0
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Swapfiles and backup
