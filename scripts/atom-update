@@ -3,6 +3,13 @@
 
 set -eu
 
+procCount=$(pgrep -c atom)
+# The current shell process also includes the keyword "atom".
+if  [[ $procCount -ne 1 ]] ; then
+    echo "Close all existing atom instances to continue."
+    exit 1
+fi
+
 # TODO: Check if newer version is available before proceeding.
 
 rm -f /tmp/atom.deb
