@@ -1,0 +1,18 @@
+#!/bin/bash
+# Utility script for viewing results of a C++ program in a single step.
+
+file=$1
+bin="${file%.*}"
+
+trap cleanup INT
+
+cleanup() {
+    rm -f "$bin"
+}
+
+main() {
+    g++ -o "$bin" "$file" && ./"$bin"
+    cleanup
+}
+
+main
