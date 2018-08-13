@@ -26,9 +26,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# start battery notifications script
-exec --no-startup-id scripts/i3-battery-popup
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -142,6 +139,7 @@ bindsym XF86MonBrightnessUp exec ../scripts/brightness +1
 # Start utility applets
 exec --no-startup-id nm-applet       # Network Manager
 exec --no-startup-id blueman-applet  # Bluetooth Manager
+exec --no-startup-id pasystray       # Volume Manager
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
