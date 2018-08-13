@@ -1,19 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Navigation
+" >> Source code navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bash like keys
-nmap <C-A> <Home>
-imap <C-A> <Home>
-nmap <C-E> <End>
-imap <C-E> <End>
-nmap <C-Left> b
-nmap <C-Right> w
-" Avoid arrow keys in insert mode
-imap <A-l> <Right>
-imap <A-h> <Left>
-imap <A-j> <Down>
-imap <A-k> <Up>
-
 au BufRead,BufNewFile *.pkt set filetype=packetdrill
 
 " Cscope configuration

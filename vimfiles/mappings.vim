@@ -30,3 +30,18 @@ map <C-W> <C-W><C-W>
 
 " Colorcolumn for demarcating 80 characters per line limit
 nnoremap <C-u> :call ToggleColorColumn()<CR>
+
+" Bash like key-bindings
+nmap <C-A> <Home>
+imap <C-A> <Home>
+nmap <C-E> <End>
+imap <C-E> <End>
+nmap <C-Left> b
+nmap <C-Right> w
+
+" Avoid using arrow keys in insert mode
+imap <A-l> <Right>
+imap <A-h> <Left>
+imap <A-j> <Down>
+imap <A-k> <Up>
+imap <A-Space> <Space>
