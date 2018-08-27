@@ -5,3 +5,4 @@ cscope.out
 cscope.in.out
 cscope.po.out
 *.o
+.gdb_history
