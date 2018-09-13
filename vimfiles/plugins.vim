@@ -29,7 +29,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 Plug 'plasticboy/vim-markdown'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'danmar/cppcheck'

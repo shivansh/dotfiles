@@ -1,4 +1,7 @@
-autocmd VimEnter * setlocal formatoptions+=cro
+" If the current line is a comment, on pressing Enter the next line will also
+" be marked as a comment.
+" TODO: vim-go seems to be overwriting local buffer configs.
+autocmd VimEnter * set formatoptions+=cro
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> NerdCommenter configs
