@@ -31,7 +31,7 @@ Plug 'ervandew/supertab'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
+Plug 'sbdchd/neoformat'
 Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
 
