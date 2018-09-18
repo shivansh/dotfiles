@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# This script sets the audio profile for shivansh's JBL GO bluetooth speaker.
+# Since the audio profile is by default set to off when the connection is
+# established, switching it to A2DP sink is done manually.
+
+set -eu
+
+i=0  # retry count
+max_retries=4
+card_name=bluez_card.30_C0_1B_AC_72_FB
+
+while [ $i -lt $max_retries ]; do
+    sleep 2  # wait for the system to configure the device
+    if pacmd set-card-profile $card_name a2dp_sink; then
+        break
+    fi
+    ((i++))
+done
