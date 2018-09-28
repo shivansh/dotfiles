@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# This script is a quick and dirty way of comparing output of testcases with
+# their respective answers. The need of writing this script arose out of
+# frustation with manually checking the output of every testcase after minor
+# updates to a program while solving algorithmic challenges.
+# NOTE: This script is currently intended to be used for C++ programs.
+#
+# Usage:
+# 	./script.sh <cpp-file> <testcase-file>
+#
+# Test file format -
+# 	* each input should be followed by its answer (expected ouput)
+# 	* separate consecutive inputs and answers by an empty line
+
+set -euo pipefail
+
+trap cleanup INT
+
+CC=g++
+BIN="a.out"
+
+setup() {
+    $CC "$1"
+}
+
+cleanup() {
+    rm -f "$BIN"
+}
+
+eval_testcases() {
+    # is_input represents whether an input (1) or an answer (0) is being read.
+    is_input=1
+    data=
+
+    while IFS='' read -r line || [[ -n "$line" ]]; do
+	if [[ $line == "" ]]; then
+	    # An empty line represents that we have finished reading either an
+	    # input or an answer (expected output).
+	    if [[ $is_input -eq 1 ]]; then
+		user_output=$(echo -e "$data" | ./a.out)
+		echo "output: $user_output"
+		data=
+		is_input=0
+	    else
+		echo -e "answer: $data"
+		data=
+		is_input=1
+	    fi
+	else
+	    data="$data$line\n"
+	fi
+    done < "$1"
+
+    # Handle the last read answer (expected output). This will be the case when
+    # the last answer is not succeeded by an empty line.
+    if [[ ! -z "$data" ]]; then
+	echo -e "answer: $data"
+    fi
+}
+
+main() {
+    if [[ ! -f "$1" ]] || [[ ! -f "$2" ]]; then
+	echo "File not found!"
+	exit 1
+    fi
+
+    setup "$1"
+    eval_testcases "$2"
+    cleanup
+}
+
+if [[ "$#" -ne 2 ]]; then
+    echo "usage: cpptest <cpp-file> <input-file>"
+    exit 1
+fi
+
+main "$1" "$2"
