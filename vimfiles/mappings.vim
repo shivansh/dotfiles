@@ -16,7 +16,10 @@ nmap // <leader>ci
 map ; :
 
 " Automatic indentation
-map <F5> mzgg=G`z :call DeleteTrailingWS() <CR>
+" TODO figure out a better way of creating a mapping for all files except
+" C-family files.
+map <F5> mzgg=G`z :call DeleteTrailingWS()<CR>
+autocmd FileType c,cpp map <buffer> <F5> :call FormatOnSave()<CR>
 
 " Tagbar
 nmap  <F4> :TagbarToggle<CR>
