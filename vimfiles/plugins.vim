@@ -34,6 +34,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'sbdchd/neoformat'
 Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
+Plug 'vim-scripts/timestamp.vim'
 
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}

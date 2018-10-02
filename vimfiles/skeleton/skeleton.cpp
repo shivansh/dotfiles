@@ -1,5 +1,11 @@
-#include <iostream>
-#include <vector>
+/**
+ *      Author:        shivansh
+ *      Created:       TIMESTAMP
+ *      Last Modified: TIMESTAMP
+**/
+
+#include <bits/stdc++.h>
+
 using namespace std;
 
 int main() {
