@@ -27,7 +27,7 @@ fi
 # Customize peripherals
 touchpad_id=$(xinput | grep "Synaptics TouchPad" | sed -E 's/.*id=([0-9]*).*/\1/')
 if [ ! -z "$touchpad_id" ]; then
-    xinput set-prop $touchpad_id "Device Enabled" 0
+    xinput disable $touchpad_id
 fi
 xmodmap ~/.xmodmap
 xset r rate 200 60
