@@ -18,7 +18,7 @@ fi
 export PATH="/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/games:$HOME/.local/bin:$HOME/arc/arcanist/bin:$HOME/.cargo/bin:$HOME/dotfiles/scripts"
 
 # Set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
@@ -26,7 +26,9 @@ fi
 
 # Customize peripherals
 touchpad_id=$(xinput | grep "Synaptics TouchPad" | sed -E 's/.*id=([0-9]*).*/\1/')
-xinput set-prop $touchpad_id "Device Enabled" 0
+if [ ! -z "$touchpad_id" ]; then
+    xinput set-prop $touchpad_id "Device Enabled" 0
+fi
 xmodmap ~/.xmodmap
 xset r rate 200 60
 
