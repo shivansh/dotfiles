@@ -18,3 +18,4 @@ alias rm="rm -I"         # prompt before deleting multiple files
 alias sap="notify sudo apt"
 alias vi="nvim"
 alias weather="curl -4 'http://wttr.in/Kanpur?m'"
+alias python="python3"
