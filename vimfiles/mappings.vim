@@ -48,3 +48,9 @@ imap <A-h> <Left>
 imap <A-j> <Down>
 imap <A-k> <Up>
 imap <A-Space> <Space>
+
+" Compile current C++ buffer
+autocmd FileType cpp map <F9> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp<CR>
+
+" Copy current buffer to system clipboard
+map <F8> gg"+yG<CR>

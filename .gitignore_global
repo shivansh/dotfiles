@@ -26,3 +26,6 @@ cscope.po.out
 
 # Compiled object files
 *.o
+
+# Generated binaries
+a.out
