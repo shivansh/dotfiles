@@ -2,19 +2,21 @@
 #
 # This script sets the audio profile for shivansh's JBL GO bluetooth speaker.
 # Since the audio profile is by default set to off when the connection is
-# established, switching it to A2DP sink is done manually.
+# established, switching it to A2DP sink is done manually (for the time being).
 
-i=0  # retry count
 max_retries=4
 card_name=bluez_card.30_C0_1B_AC_72_FB
 timeout=4
 
-while [ $i -lt $max_retries ]; do
-    sleep $timeout  # wait for the system to configure the device
+for i in $(seq 1 $max_retries);
+do
+    # Once the device is connected, it takes some time until the card profile
+    # can be updated. Sleep until then.
+    sleep $timeout
     if [[ $(pacmd set-card-profile $card_name a2dp_sink) ]]; then
-        echo "retrying..."
+        echo "Retrying..."
     else
+        echo "Success!"
         break
     fi
-    ((i++))
 done
