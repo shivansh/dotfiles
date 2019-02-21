@@ -1,3 +1,6 @@
 [submodule "zsh-themes/powerlevel9k"]
 	path = zsh-themes/powerlevel9k
 	url = git@github.com:shivrai/powerlevel9k.git
+[submodule "fonts/google-fonts"]
+	path = fonts/google-fonts
+	url = git@github.com:google/fonts
