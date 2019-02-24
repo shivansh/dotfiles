@@ -6,4 +6,5 @@ set -euo pipefail
 # data as compared to pipes where the setup cost dominates.
 # https://unix.stackexchange.com/a/219806/158139
 response=$(w3m -dump "http://explainshell.com/explain?cmd="$(echo $@ | tr ' ' '+'}))
-cat -s <(grep -v -e explainshell -e • -e □ -e "source manpages" <<< "$response")
+columns=$(tput cols)
+cat -s <(grep -v -e explainshell -e • -e □ -e "source manpages" <<< "$response") | fmt -c -w $columns
