@@ -27,6 +27,10 @@ set -o ignoreeof
 
 source $ZSH/oh-my-zsh.sh
 
+HISTSIZE=20000
+SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
+
 # Override aliases introduced by oh-my-zsh
 [ -r "$HOME/.aliases" ] && [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
