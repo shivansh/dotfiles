@@ -32,9 +32,6 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+n exec --no-startup-id rofi -show run
 
-# Custom todo-list using rofi
-bindsym $mod+b exec --no-startup-id cat ~/todo | rofi -dmenu
-
 # change focus using arrow keys, "." and ",".
 bindsym $mod+0x2c focus left
 bindsym $mod+Left focus left
@@ -75,16 +72,16 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#workspaces defined
-set $w1 k:🕸web
-set $w2 j:💻nvim
-set $w3 h:⇄ssh
-set $w4 l:GUI
-set $w5 u:📩irc
+# Workspace definitions
+set $w1 k:web
+set $w2 j:nvim
+set $w3 h:GUI
+set $w4 l:vlc
+set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
-set $w8 p:🎧media
-set $w9 m:📃slides
+set $w8 p:media
+set $w9 m:slides
 
 # switch to workspace
 bindsym $mod+k workspace $w1
@@ -96,7 +93,6 @@ bindsym $mod+i workspace $w6
 bindsym $mod+o workspace $w7
 bindsym $mod+p workspace $w8
 bindsym $mod+m workspace $w9
-bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+k move container to workspace $w1
@@ -108,12 +104,17 @@ bindsym $mod+Shift+i move container to workspace $w6
 bindsym $mod+Shift+o move container to workspace $w7
 bindsym $mod+Shift+p move container to workspace $w8
 bindsym $mod+Shift+m move container to workspace $w9
-bindsym $mod+Shift+0 move container to workspace 10
 
-## Assign section
-## TODO: update this section
-# assign [window_role="^browser$"]     → $w1
-# for_window [window_role="^browser$"] focus
+# Assign section
+assign [class="Google-chrome"] $w1
+assign [class="X-terminal-emulator"] $w2
+assign [class="Nautilus"] $w3
+assign [class="vlc"] $w4
+# Standard `assign` doesn't work with spotify for the time being.
+# References:
+#   - https://wiki.archlinux.org/index.php/i3#Default_workspace_for_Spotify
+#   - www.reddit.com/r/i3wm/comments/45lj06/spotify_start_on_specific_workspace_failing/d4zticp
+for_window [class="Spotify"] move to workspace $w8
 
 # next/previous workspace
 bindsym Mod1+Tab workspace prev
@@ -128,7 +129,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 
 bindsym $mod+y move workspace to output left
 
 # hotkeys
-bindsym $mod+Tab exec firefox
+bindsym $mod+Tab exec google-chrome-stable
 
 bindsym Mod1+Shift+l exec gnome-screensaver-command -l
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%
@@ -140,6 +141,9 @@ bindsym XF86MonBrightnessUp exec ../scripts/brightness +1
 exec --no-startup-id nm-applet       # Network Manager
 exec --no-startup-id blueman-applet  # Bluetooth Manager
 exec --no-startup-id pasystray       # Volume Manager
+
+# Startup applications
+exec --no-startup-id spotify
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
