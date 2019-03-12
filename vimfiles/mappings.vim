@@ -20,6 +20,7 @@ map ; :
 " C-family files.
 map <F5> mzgg=G`z :call DeleteTrailingWS()<CR>
 autocmd FileType c,cpp map <buffer> <F5> :call FormatOnSave()<CR>
+autocmd FileType python map <buffer> <F5> :%!yapf --style "google"<CR>
 
 " Tagbar
 nmap  <F4> :TagbarToggle<CR>

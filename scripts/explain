@@ -1,4 +1,5 @@
 #!/bin/bash
+# Ref: https://github.com/idank/explainshell/issues/4#issuecomment-354709120
 
 set -euo pipefail
 

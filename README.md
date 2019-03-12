@@ -26,3 +26,6 @@ Your current configuration files (_refer next section_) will be backed up and ca
 
 ### Custom installation
 For cherry-picking the configuration files, update the variable `rcList` in `install.sh` accordingly.
+
+### Fonts
+Refer [this](https://github.com/gabrielelana/awesome-terminal-fonts/tree/patching-strategy) for using a patched version of Source Code Pro.

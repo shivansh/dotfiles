@@ -14,5 +14,5 @@ fi
 
 rm -f /tmp/atom.deb
 curl -L https://atom.io/download/deb > /tmp/atom.deb
-sudo dpkg --install /tmp/atom.deb
+sudo dpkg --i /tmp/atom.deb
 apm upgrade --confirm false

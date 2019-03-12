@@ -36,6 +36,3 @@ setopt hist_ignore_all_dups
 
 # Load fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-# added by Anaconda3 installer
-# export PATH="/home/zeebu/anaconda3/bin:$PATH"
