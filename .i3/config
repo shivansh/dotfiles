@@ -84,7 +84,7 @@ set $w5 u:irc
 set $w6 i:ide
 set $w7 o:vm
 set $w8 p:media
-set $w9 m:slides
+set $w9 m:docs
 
 # switch to workspace
 bindsym $mod+k workspace $w1
@@ -113,6 +113,8 @@ assign [class="Google-chrome"] $w1
 assign [class="X-terminal-emulator"] $w2
 assign [class="Nautilus"] $w3
 assign [class="vlc"] $w4
+assign [class="Atom"] $w6
+assign [class="okular"] $w9
 # Standard `assign` doesn't work with spotify for the time being.
 # References:
 #   - https://wiki.archlinux.org/index.php/i3#Default_workspace_for_Spotify
