@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-
-touchpad=$(grep "Synaptics TouchPad" <(xinput) | awk '{print $6}' | grep -o '[0-9]*')
-xinput disable $touchpad

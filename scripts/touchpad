@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Script to enable/disable touchpad.
+# Accepts a single argument -
+#   - 0: disable
+#   - 1: enable
+# If no argument is provided, the current state is flipped.
+
+set -euo pipefail
+
+id=$(xinput | grep "Synaptics TouchPad" | awk '{print $6}' | grep -o '[0-9]*')
+state=$(xinput list-props "$id" | grep "Device Enabled" | awk '{print $4}')
+
+if [ $# -eq 1 ]; then
+    [ "$1" -eq 0 ] && xinput disable "$id" || xinput enable "$id"
+else
+    [ "$state" -eq 0 ] && xinput enable "$id" || xinput disable "$id"
+fi
