@@ -1,11 +1,8 @@
 #!/bin/bash
 # Setup screen sharing
-
-# NOTE
-# * arguments to `xrandr --newmode` are retrieved via `sudo cvt 1920 1080 60`
-# * VGA-1 is currently the primary display, and HDMI-2 is the secondary display.
-#   The display info can be retrieved via `xrandr`.
+# The display info can be retrieved via `xrandr`.
+# Arguments to `xrandr --newmode` are retrieved via `sudo cvt 1920 1080 60`
 xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
-xrandr --addmode VGA-1 1920x1080_60.00
-xrandr --output VGA-1 --mode 1920x1080_60.00
-xrandr --output VGA-1 --primary --right-of HDMI-2
+xrandr --addmode "$1" 1920x1080_60.00
+xrandr --output "$1" --mode 1920x1080_60.00
+xrandr --output "$1" --primary --right-of "$2"
