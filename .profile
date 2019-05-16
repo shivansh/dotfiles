@@ -25,16 +25,12 @@ fi
 # Load the shell dotfiles
 
 # Customize peripherals
-touchpad_id=$(xinput | grep "Synaptics TouchPad" | sed -E 's/.*id=([0-9]*).*/\1/')
-if [ ! -z "$touchpad_id" ]; then
-    xinput disable $touchpad_id
-fi
 xmodmap ~/.xmodmap
 xset r rate 200 60
 
 # non shell-specific exports
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export GOPATH=$HOME/sourceCodes/personalProjects/goProjects
+export GOPATH=$HOME/sourceCodes/goProjects
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export LESS="$LESS --ignore-case -R"
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"

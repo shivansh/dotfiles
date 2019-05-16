@@ -108,6 +108,9 @@ bindsym $mod+Shift+o move container to workspace $w7
 bindsym $mod+Shift+p move container to workspace $w8
 bindsym $mod+Shift+m move container to workspace $w9
 
+# Shortcuts
+bindsym $mod+1 exec touchpad
+
 # Assign section
 assign [class="Google-chrome"] $w1
 assign [class="X-terminal-emulator"] $w2
