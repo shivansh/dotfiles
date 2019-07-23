@@ -4,7 +4,8 @@ done
 unset file
 
 # Set zsh theme specific configuration variables
-ZSH_THEME="af-magic"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+source $HOME/powerlevel9k-setup
 
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -14,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git extract colored-man-pages autojump colorize ssh-agent sudo)
+plugins=(git extract colored-man-pages autojump colorize gpg-agent ssh-agent sudo)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
