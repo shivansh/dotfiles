@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'pangloss/vim-javascript'
-Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/syntastic'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -25,7 +24,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
 Plug 'kien/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
 Plug 'ervandew/supertab'
 Plug 'plasticboy/vim-markdown'
@@ -36,6 +35,7 @@ Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/timestamp.vim'
 
+" Plug 'derekwyatt/vim-scala'
 " Plug 'eagletmt/ghcmod-vim'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'eagletmt/neco-ghc'

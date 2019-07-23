@@ -4,8 +4,7 @@ done
 unset file
 
 # Set zsh theme specific configuration variables
-ZSH_THEME="powerlevel9k/powerlevel9k"
-source $HOME/powerlevel9k-setup
+ZSH_THEME="af-magic"
 
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -15,7 +14,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git extract colored-man-pages autojump colorize zsh-syntax-highlighting gpg-agent ssh-agent sudo)
+plugins=(git extract colored-man-pages autojump colorize ssh-agent sudo)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -36,3 +35,6 @@ setopt hist_ignore_all_dups
 
 # Load fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
+# FIXME: ~/.profile isn't loading by default.
+source $HOME/.profile

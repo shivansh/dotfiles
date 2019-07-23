@@ -1,7 +1,7 @@
 [user]
 	name = Shivansh Rai
 	email = shivansh@freebsd.org
-	signingkey = BDF08F0B
+	signingkey = 42AC0175
 
 [core]
 	editor = nvim
@@ -22,8 +22,8 @@
 	gpgsign = true
 
 [url "git@github.com:"]
-  insteadOf = https://github.com/
-  insteadOf = http://github.com/
+	insteadOf = https://github.com/
+	insteadOf = http://github.com/
 
 [gc]
 	auto = 1

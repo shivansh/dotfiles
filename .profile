@@ -22,15 +22,8 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Load the shell dotfiles
-
-# Customize peripherals
-xmodmap ~/.xmodmap
-xset r rate 200 60
-
 # non shell-specific exports
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export GOPATH=$HOME/sourceCodes/goProjects
+export GOPATH=$HOME/code/go_projects
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export LESS="$LESS --ignore-case -R"
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"

@@ -44,11 +44,11 @@ nmap <C-Left> b
 nmap <C-Right> w
 
 " Avoid using arrow keys in insert mode
-imap <A-l> <Right>
-imap <A-h> <Left>
-imap <A-j> <Down>
-imap <A-k> <Up>
-imap <A-Space> <Space>
+inoremap <C-l> <Right>
+inoremap <C-n> <Left>  " FIXME: C-h is mapped to delete by default in OSX
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-Space> <Space>
 
 " Compile current C++ buffer
 autocmd FileType cpp map <F9> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp<CR>

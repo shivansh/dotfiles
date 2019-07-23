@@ -29,12 +29,9 @@ main() {
     # Place all the required rc files here
     rcList=(".bashrc" ".zshrc" ".profile"
             ".aliases" ".exports" ".functions"
-            ".conkyrc" "conky-i3bar"
             ".vimrc" ".vim"
-            ".xinitrc" ".xmodmap"
             ".gitconfig" ".gitignore_global"
-            ".clang-format"
-            "powerlevel9k-setup"); # TODO: fonts/ and .i3/ ??
+	    ".clang-format");
     backupDir=".backup.configs" # TODO Check for naming conflicts.
 
     CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
