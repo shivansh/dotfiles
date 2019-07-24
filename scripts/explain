@@ -3,6 +3,10 @@
 
 set -euo pipefail
 
+if [ $# -eq 0 ]; then
+    exit 0
+fi
+
 # Here strings are noted to be faster for a small amount of
 # data as compared to pipes where the setup cost dominates.
 # https://unix.stackexchange.com/a/219806/158139
