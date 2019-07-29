@@ -39,3 +39,5 @@ setopt hist_ignore_all_dups
 
 # FIXME: ~/.profile isn't loading by default.
 source $HOME/.profile
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
