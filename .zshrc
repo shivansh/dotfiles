@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git extract colored-man-pages autojump colorize gpg-agent ssh-agent sudo)
+plugins=(git extract colored-man-pages autojump colorize gpg-agent ssh-agent sudo kubectl helm)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
