@@ -50,3 +50,7 @@ let g:ycm_show_diagnostics_ui = 0
 
 " Vim-go
 let g:go_fmt_command = "goimports"
+" Ref: github.com/fatih/vim-go/wiki/FAQ-Troubleshooting#vim-becomes-sluggish-while-editing-go-files
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
