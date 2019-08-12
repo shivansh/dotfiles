@@ -29,3 +29,7 @@ cscope.po.out
 
 # Generated binaries
 a.out
+
+# Private keys and certificates
+*.pem
+*.crt
