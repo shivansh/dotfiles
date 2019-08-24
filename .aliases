@@ -12,7 +12,6 @@ alias gla="glances -t 3"
 alias xopen="xdg-open"   # delegates file handling to platform-relevant tool
 alias m="man"
 alias pong="ping 8.8.8.8"
-alias rm="rm -I"         # prompt before deleting multiple files
 alias sap="notify sudo apt"
 alias vi="nvim"
 alias weather="curl -4 'http://wttr.in/Kanpur?m'"
