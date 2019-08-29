@@ -53,6 +53,7 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 set clipboard=unnamed
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Swapfiles and backup

@@ -49,7 +49,7 @@ let g:javascript_plugin_jsdoc = 1
 let g:ycm_show_diagnostics_ui = 0
 
 " Vim-go
-let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 0
 " Ref: github.com/fatih/vim-go/wiki/FAQ-Troubleshooting#vim-becomes-sluggish-while-editing-go-files
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
