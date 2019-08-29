@@ -31,5 +31,6 @@ cscope.po.out
 a.out
 
 # Private keys and certificates
+*.key
 *.pem
 *.crt

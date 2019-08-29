@@ -1,12 +1,7 @@
-for file in $HOME/.{exports,functions}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
+# FIXME: ~/.profile isn't loading by default in OSX.
+source $HOME/.profile
 
-# Set zsh theme specific configuration variables
 ZSH_THEME="powerlevel9k/powerlevel9k"
-source $HOME/powerlevel9k-setup
-
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
@@ -15,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git extract colored-man-pages autojump colorize gpg-agent ssh-agent sudo kubectl helm)
+plugins=(git extract colored-man-pages autojump gpg-agent ssh-agent sudo)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word
@@ -25,19 +20,11 @@ bindkey '^[[1;5C' forward-word
 set -o noclobber
 set -o ignoreeof
 
+for file in $HOME/.{exports,functions,aliases}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
+
+source $HOME/powerlevel9k-setup
 source $ZSH/oh-my-zsh.sh
-
-HISTSIZE=20000
-SAVEHIST=$HISTSIZE
-setopt hist_ignore_all_dups
-
-# Override aliases introduced by oh-my-zsh
-[ -r "$HOME/.aliases" ] && [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
-
-# Load fzf
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-# FIXME: ~/.profile isn't loading by default.
-source $HOME/.profile
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
