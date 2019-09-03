@@ -15,3 +15,9 @@ alias pong="ping 8.8.8.8"
 alias vi="nvim"
 alias weather="curl -4 'http://wttr.in/Kanpur?m'"
 alias k="kubectl"
+# Quoting from `bash -c "help alias"` -
+#   A trailing space in VALUE causes the next word to be checked for
+#   alias substitution when the alias is expanded.  Alias returns
+#   true unless a NAME is given for which no alias has been defined.
+# (https://unix.stackexchange.com/a/25329/158139)
+alias watch="watch "
