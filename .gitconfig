@@ -1,7 +1,7 @@
 [user]
 	name = Shivansh Rai
 	email = shivansh.rai@sap.com
-	signingkey = 42AC0175
+	signingkey = B81B9A68
 
 [core]
 	editor = nvim
