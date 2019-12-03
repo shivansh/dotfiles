@@ -46,7 +46,8 @@ let g:javascript_plugin_jsdoc = 1
 " let g:syntastic_asm_compiler = 'mipsel-linux-gcc'
 " let g:syntastic_asm_checkers = []
 
-let g:ycm_show_diagnostics_ui = 0
+" Display the quickfix window for on-the-fly errors.
+let g:ycm_show_diagnostics_ui = 1
 
 " Vim-go
 let g:go_fmt_autosave = 0
