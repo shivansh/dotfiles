@@ -38,6 +38,8 @@ set showmatch
 set sidescroll=1
 set ttyfast
 set splitbelow
+set signcolumn=yes
+
 " set term=screen-256color
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,6 +68,7 @@ set directory^=~/.vim/temp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " >> Miscellaneous
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 source $HOME/dotfiles/vimfiles/plugins.vim        " Plugins
 source $HOME/dotfiles/vimfiles/syntax.vim         " Syntax and auto-completion
 source $HOME/dotfiles/vimfiles/indent.vim         " Indentation

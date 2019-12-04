@@ -9,7 +9,4 @@ colorscheme peaksea
 " Favourites > desert256v2 Candypaper 256-jungle molokai jellybeans
 
 highlight ExtraWhitespace ctermbg=13
-
-" vim-go syntax highlighting
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
+highlight SignColumn ctermbg=16  " gutter
