@@ -15,7 +15,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export PATH=/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/sbin:$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$HOME/dotfiles/scripts
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/sbin:$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$HOME/dotfiles/scripts
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
