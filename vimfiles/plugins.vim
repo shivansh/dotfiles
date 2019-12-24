@@ -15,7 +15,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ntpeters/vim-better-whitespace'    " Show trailing whitespace
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'scrooloose/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
 Plug 'kien/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe'
@@ -23,10 +22,18 @@ Plug 'tpope/vim-sleuth'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovimhaskell/haskell-vim'
-Plug 'sbdchd/neoformat'
 Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/timestamp.vim'
+Plug 'ludovicchabant/vim-gutentags'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
 
 " Plug 'scrooloose/nerdtree'
 " Plug 'mhinz/vim-startify'
