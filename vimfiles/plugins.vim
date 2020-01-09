@@ -11,7 +11,6 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/auto-pairs-gentle'
-Plug 'davidhalter/jedi-vim'
 Plug 'ntpeters/vim-better-whitespace'    " Show trailing whitespace
 Plug 'kshenoy/vim-signature'             " Show markers
 Plug 'scrooloose/nerdcommenter'
@@ -21,20 +20,13 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-sleuth'
 Plug 'plasticboy/vim-markdown'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'neovimhaskell/haskell-vim'
 Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/timestamp.vim'
-Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-" (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
+" Plug 'neovimhaskell/haskell-vim'
+" Plug 'davidhalter/jedi-vim'              " Python completion
+" Plug 'ludovicchabant/vim-gutentags'      " Generate tags on-the-fly
 " Plug 'scrooloose/nerdtree'
 " Plug 'mhinz/vim-startify'
 " Plug 'ervandew/supertab'
