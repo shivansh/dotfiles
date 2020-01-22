@@ -3,7 +3,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/syntastic'
 Plug 'anyakichi/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
@@ -24,6 +23,7 @@ Plug 'danmar/cppcheck'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/timestamp.vim'
 
+" Plug 'scrooloose/syntastic'
 " Plug 'neovimhaskell/haskell-vim'
 " Plug 'davidhalter/jedi-vim'              " Python completion
 " Plug 'ludovicchabant/vim-gutentags'      " Generate tags on-the-fly
