@@ -31,7 +31,7 @@ main() {
             ".aliases" ".exports" ".functions"
             ".vimrc" ".vim"
             ".gitconfig" ".gitignore_global"
-	    ".clang-format");
+            ".clang-format");
     backupDir=".backup.configs" # TODO Check for naming conflicts.
 
     CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
