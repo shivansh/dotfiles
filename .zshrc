@@ -28,3 +28,9 @@ unset file
 source $HOME/powerlevel9k-setup
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
+# Initialize the completion system.
+# Ref:
+# - https://github.com/wting/autojump/issues/178#issuecomment-13388627
+# - http://zsh.sourceforge.net/Doc/Release/Completion-System.html
+autoload -U compinit && compinit
