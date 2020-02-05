@@ -1,15 +1,17 @@
 #!/bin/bash
-# Ref: https://github.com/idank/explainshell/issues/4#issuecomment-354709120
+# Ref: https://news.ycombinator.com/item?id=22125306
 
 set -euo pipefail
 
-if [ $# -eq 0 ]; then
-    exit 0
+if [ "$#" -eq 0 ]; then
+  while read -p "Command: " cmd; do
+    curl -Gs "https://www.mankier.com/api/v2/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
+  done
+  echo "Bye!"
+elif [ "$#" -eq 1 ]; then
+  curl -Gs "https://www.mankier.com/api/v2/explain/?cols="$(tput cols) --data-urlencode "q=$1"
+else
+  echo "Usage"
+  echo "explain                  interactive mode."
+  echo "explain 'cmd -o | ...'   one quoted command to explain it."
 fi
-
-# Here strings are noted to be faster for a small amount of
-# data as compared to pipes where the setup cost dominates.
-# https://unix.stackexchange.com/a/219806/158139
-response=$(w3m -dump "http://explainshell.com/explain?cmd="$(echo $@ | tr ' ' '+'}))
-columns=$(tput cols)
-cat -s <(grep -v -e explainshell -e • -e □ -e "source manpages" <<< "$response") | fmt -w $columns

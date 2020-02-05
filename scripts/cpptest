@@ -7,7 +7,7 @@
 # NOTE: This script is currently intended to be used for C++ programs.
 #
 # Usage:
-# 	./script.sh <cpp-file> <testcase-file>
+# 	cpptest <cpp-file> <testcase-file>
 #
 # Test file format -
 # 	* each input should be followed by its answer (expected ouput)
