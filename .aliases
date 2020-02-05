@@ -13,7 +13,7 @@ alias xopen="xdg-open"   # delegates file handling to platform-relevant tool
 alias m="man"
 alias pong="ping 8.8.8.8"
 alias vi="nvim"
-alias weather="curl -4 'http://wttr.in/Kanpur?m'"
+alias weather="curl -4 'http://wttr.in/Bangalore?m'"
 alias k="kubectl"
 # Quoting from `bash -c "help alias"` -
 #   A trailing space in VALUE causes the next word to be checked for
