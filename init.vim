@@ -43,7 +43,7 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 set clipboard=unnamed
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4
 
 " --- [ Swap and backup ] ------------------------------------------------------
 set directory^=~/.vim/temp  " swapfile directory
