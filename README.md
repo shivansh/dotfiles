@@ -1,8 +1,6 @@
 # @shivansh's dotfiles
 Collection of all the configuration files made to ease and speed up the significant part of my life spent on shell. Well, these serve as a means of procrastination too.
 
-![Workspace-Selection](workspace-selection.png)
-
 ---
 
 ## Requirements
@@ -11,9 +9,6 @@ Collection of all the configuration files made to ease and speed up the signific
 * [oh-my-zsh](http://ohmyz.sh/)
 * [Powerline fonts](https://github.com/powerline/fonts#powerline-fonts)
 * [Vim-Plug](https://github.com/junegunn/vim-plug#installation) (for plugin management)
-* exuberant ctags **(optional)**
-* cscope **(optional)**
-* [exa](https://github.com/ogham/exa)
 
 ## Installation
 **Warning:** If you want to give these dotfiles a try, it's highly advisable to first review the code, and remove the unrequired things. Proceed at your own risk!

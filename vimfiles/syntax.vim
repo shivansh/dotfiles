@@ -1,11 +1,9 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" >> Syntax checking and auto-complete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" --- [ Static checking ] ------------------------------------------------------
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1        " Aggregate errors from all checkers
+" let g:syntastic_aggregate_errors = 1  " Aggregate errors from all checkers
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-l> :SyntasticToggleMode<CR>
 
@@ -14,6 +12,7 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
+" Enable omni completion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -23,19 +22,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
-" Typescript
-" let g:syntastic_typescript_checks=['tsc', 'tslint']
-" Make the compiler search for the tsconfig.json file starting in
-" the current directory and continuing up the parent directory chain.
-" let g:syntastic_typescript_tsc_fname = ''
-" let g:syntastic_typescript_checkers = []
-
-" autocmd FileType typescript :set makeprg=tsc
-" let g:typescript_compiler_binary = 'tsc'
-" let g:typescript_compiler_options = ''
-
 " Javascript
 let g:javascript_plugin_jsdoc = 1
+" NOTE: jshint should be globally available (npm install -g jshint)
+let g:syntastic_javascript_checkers = ['jshint']
 
 " C/C++
 " let g:clang_library_path='/usr/lib/llvm-3.4/lib'
@@ -55,7 +45,15 @@ let g:go_fmt_autosave = 0
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
 let g:go_highlight_operators = 0
-
-" vim-go syntax highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+
+" --- [ Autocomplete ] ---------------------------------------------------------
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = '/usr/bin/python'
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+" Python support for YouCompleteMe
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
