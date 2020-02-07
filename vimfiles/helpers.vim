@@ -18,7 +18,7 @@ endfunction
 function! FormatOnSave()
   let l:formatdiff = 1
   let l:lines="all"
-  pyf ~/dotfiles/clang-format.py
+  pyf $HOME/dotfiles/languages/clang-format.py
 endfunction
 
 " Turn on persistent undo, which means you can undo even

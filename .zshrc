@@ -25,7 +25,7 @@ for file in $HOME/.{exports,functions,aliases}; do
 done
 unset file
 
-source $HOME/powerlevel9k-setup
+source $HOME/.powerlevel9k-setup
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 

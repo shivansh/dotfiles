@@ -31,9 +31,11 @@ set sidescroll=1
 set ttyfast
 set splitbelow
 set signcolumn=yes
+set formatoptions+=cro
 
 " --- [ Tabs and indents ] -----------------------------------------------------
-set shiftwidth=4
+set shiftwidth=2
+set tabstop=2
 set copyindent
 set autoindent
 set smartcase
@@ -43,7 +45,6 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 set clipboard=unnamed
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4
 
 " --- [ Swap and backup ] ------------------------------------------------------
 set directory^=~/.vim/temp  " swapfile directory
