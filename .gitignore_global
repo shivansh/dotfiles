@@ -34,3 +34,6 @@ a.out
 *.key
 *.pem
 *.crt
+
+# TSServer config files
+jsconfig.json

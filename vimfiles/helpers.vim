@@ -21,14 +21,6 @@ function! FormatOnSave()
   pyf $HOME/dotfiles/languages/clang-format.py
 endfunction
 
-" Turn on persistent undo, which means you can undo even
-" when you close the buffers
-" try
-"   set undodir=~/.vim/temp/undodir
-"   set undofile
-" catch
-" endtry
-
 if has("autocmd")
   " Highlight TODO, FIXME, NOTE, etc.
   if v:version > 701
