@@ -13,16 +13,16 @@ set directory^=~/.vim/temp  " swap directory
 " NOTE: The ^= syntax for :set prepends the directory name to the head of the
 " list, so Vim will check that directory first.
 
-let mapleader="."  " use '.' instead of leader
+let mapleader="."  " use '.' instead of leader (usually \)
 
 " FIXME, ref: github.com/neovim/neovim/issues/8217#issuecomment-402152307
 " command W w !sudo tee % > /dev/null
 
 " --- [ Load configs ] ---------------------------------------------------------
-source $HOME/dotfiles/vimfiles/plugins.vim
-source $HOME/dotfiles/vimfiles/format.vim
-source $HOME/dotfiles/vimfiles/helpers.vim
-source $HOME/dotfiles/vimfiles/interface.vim
-source $HOME/dotfiles/vimfiles/mappings.vim
-source $HOME/dotfiles/vimfiles/misc.vim
-source $HOME/dotfiles/vimfiles/syntax.vim
+source $HOME/dotfiles/vim/plugins.vim
+source $HOME/dotfiles/vim/format.vim
+source $HOME/dotfiles/vim/helpers.vim
+source $HOME/dotfiles/vim/interface.vim
+source $HOME/dotfiles/vim/mappings.vim
+source $HOME/dotfiles/vim/misc.vim
+source $HOME/dotfiles/vim/syntax.vim

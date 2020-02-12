@@ -29,7 +29,6 @@ main() {
     # Place all the required rc files here
     rcList=(".bashrc" ".zshrc" ".profile"
             ".aliases" ".exports" ".functions"
-            ".vimrc" ".vim"
             ".gitconfig" ".gitignore_global"
             ".clang-format");
     backupDir=".backup.configs" # TODO Check for naming conflicts.
@@ -93,7 +92,7 @@ backupAndUpdate() {
         "$HOME/.oh-my-zsh/themes/powerlevel9k"
 
     # Setup neovim.
-    ln -sf "$(pwd)/.vimrc" "$HOME/.nvimrc"
+    ln -sf "$(pwd)/init.vim" "$HOME/.config/nvim/init.vim"
 
     # Setup terminator.
     if [[ -d "$HOME/.config/terminator" ]]; then

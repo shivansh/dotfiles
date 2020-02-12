@@ -10,7 +10,7 @@ set splitbelow
 set signcolumn=yes
 set formatoptions+=cro
 
-" --- [ Colors and fonts ] -----------------------------------------------------
+" --- [ Colors ] ---------------------------------------------------------------
 syntax enable  " Enable syntax highlighting by default
 set background=dark
 colorscheme peaksea
