@@ -19,7 +19,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/timestamp.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'yggdroot/indentline'
 

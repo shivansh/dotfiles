@@ -6,8 +6,8 @@ runtime! debian.vim
 set history=100
 set ignorecase
 set incsearch
-set autoread   " Dynamically update log files
-set autowrite  " Automatically save before commands like :next and :make
+set autoread
+set autowrite
 set mouse=a
 set directory^=~/.vim/temp  " swap directory
 " NOTE: The ^= syntax for :set prepends the directory name to the head of the
