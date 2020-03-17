@@ -23,3 +23,7 @@ export GPG_TTY=$(tty)
 
 # Path to local oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+# Use ag as default source for fzf to filter directories.
+export FZF_DEFAULT_COMMAND="ag -g '' --ignore-dir={.gitignore,node_modules}"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
