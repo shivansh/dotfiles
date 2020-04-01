@@ -12,3 +12,6 @@ let g:vim_markdown_folding_disabled = 1
 " --- [ Code navigation ] ------------------------------------------------------
 map <C-j> :YcmCompleter GoTo<CR>
 map <C-k> <C-O>
+
+" --- [ Ctrlp.vim ] ------------------------------------------------------------
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'

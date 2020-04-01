@@ -21,3 +21,4 @@ alias k="kubectl"
 #   true unless a NAME is given for which no alias has been defined.
 # (https://unix.stackexchange.com/a/25329/158139)
 alias watch="watch "
+alias tree="tree -I '.git|node_modules'"
