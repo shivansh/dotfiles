@@ -3,7 +3,6 @@ map <F4> :FZF<CR>
 nmap // <leader>ci  " nerdcommenter (by default <leader> is mapped to \)
 map ; :
 nmap  <F4> :TagbarToggle<CR>
-nmap <C-i> :IndentLinesToggle<CR>
 map <C-W> <C-W><C-W>
 nnoremap <C-u> :call ToggleColorColumn()<CR>
 
