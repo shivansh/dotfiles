@@ -1,7 +1,7 @@
 # FIXME: ~/.profile isn't loading by default in OSX.
 source $HOME/.profile
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # Disable marking untracked files under VCS as dirty. This makes repository
