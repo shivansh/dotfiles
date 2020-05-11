@@ -23,5 +23,3 @@ inoremap <C-Space> <Space>
 
 " Compile current C++ buffer
 autocmd FileType cpp map <F9> :<C-U>!g++ -O2 -DLOCAL -std=c++11 -Wall -Wextra -Wno-unused-result -static %:r.cpp<CR>
-
-map <F8> gg"+yG<CR>  " Copy current buffer to system clipboard
