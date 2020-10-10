@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'anyakichi/vim-surround'
+Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'danmar/cppcheck'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
