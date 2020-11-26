@@ -1,6 +1,3 @@
-# FIXME: ~/.profile isn't loading by default in OSX.
-source $HOME/.profile
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -17,7 +14,7 @@ bindkey '^[[1;5C' forward-word
 set -o noclobber  # avoid accidental overwrite by redirection
 set -o ignoreeof
 
-for file in $HOME/.{exports,functions,aliases}; do
+for file in $HOME/.{functions,aliases}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
@@ -25,9 +22,3 @@ unset file
 source $HOME/.powerlevel9k-setup
 source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-# Initialize the completion system.
-# Ref:
-# - https://github.com/wting/autojump/issues/178#issuecomment-13388627
-# - http://zsh.sourceforge.net/Doc/Release/Completion-System.html
-autoload -U compinit && compinit
