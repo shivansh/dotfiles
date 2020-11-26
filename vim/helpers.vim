@@ -1,9 +1,4 @@
 " --- [ Helper functions ] -----------------------------------------------------
-" Delete trailing white-spaces
-function! DeleteTrailingWS()
-  %s/\s\+$//ge
-endfunction
-
 " Toggle ColorColumn on/off
 function! ToggleColorColumn()
   if &colorcolumn == ''

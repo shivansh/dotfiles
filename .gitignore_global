@@ -35,5 +35,8 @@ a.out
 *.pem
 *.crt
 
-# TSServer config files
+# config files
 jsconfig.json
+.vscode/
+.DS_Store
+*.app

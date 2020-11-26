@@ -1,7 +1,7 @@
 [user]
 	name = Shivansh Rai
 	email = shivansh.rai@sap.com
-	signingkey = B81B9A68
+	signingkey = F92FF249B81B9A68
 
 [core]
 	editor = nvim
@@ -29,3 +29,8 @@
 	auto = 1
 [http]
 	cookiefile = /home/zeebu/.gitcookies
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
