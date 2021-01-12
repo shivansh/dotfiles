@@ -5,8 +5,7 @@ COMPLETION_WAITING_DOTS="true"
 # status check for large repositories much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-export NVM_LAZY_LOAD=true
-plugins=(git extract colored-man-pages autojump gpg-agent ssh-agent sudo zsh-nvm)
+plugins=(git extract autojump gpg-agent ssh-agent)
 
 # Hotkeys: support for jumping words in terminal using Ctrl + (left/right)
 bindkey '^[[1;5D' backward-word

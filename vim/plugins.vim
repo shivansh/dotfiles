@@ -9,7 +9,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'kshenoy/vim-signature'  " markers
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'plasticboy/vim-markdown'
-Plug 'preservim/nerdtree'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript'] }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'

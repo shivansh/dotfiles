@@ -15,7 +15,7 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/dotfiles/scripts
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/dotfiles/scripts:$HOME/.nvm/versions/node/v12.14.1/bin
 
 # Set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
