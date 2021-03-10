@@ -16,8 +16,8 @@ let g:go_highlight_operators = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
-" Syntastic
-nnoremap <C-l> :SyntasticToggleMode<CR>
+" ALE
+nnoremap <C-l> :ALEToggle<CR>
 
 " --- [ Autocomplete ] ---------------------------------------------------------
 let g:ycm_autoclose_preview_window_after_completion = 1

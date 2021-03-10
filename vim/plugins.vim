@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'danmar/cppcheck'
+Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/ctrlp.vim'
@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'vim-scripts/timestamp.vim'

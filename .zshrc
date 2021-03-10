@@ -14,11 +14,11 @@ bindkey '^[[1;5C' forward-word
 set -o noclobber  # avoid accidental overwrite by redirection
 set -o ignoreeof
 
+source $HOME/.powerlevel9k-setup
+source $ZSH/oh-my-zsh.sh
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
 for file in $HOME/.{functions,aliases}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
-
-source $HOME/.powerlevel9k-setup
-source $ZSH/oh-my-zsh.sh
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
